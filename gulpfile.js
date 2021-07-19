@@ -12,20 +12,19 @@ function browser() {
         server: {
             baseDir: 'app/'
         },
-        notofy: false 
+        notify: false 
     })
 }
 
-// конвертация стилей в css
 function styles() {
-    return src('app/scss/style.scss') // путь к файлу в котором пишем 
-    .pipe(scss({outputStyle:'compressed' })) // вид файла который уходит в css
-    .pipe(concat('style.min.css')) // названия файла 
+    return src('app/scss/style.scss') 
+    .pipe(scss({outputStyle:'compressed' })) 
+    .pipe(concat('style.min.css')) 
     .pipe(autoprefixer({
-        overrideBrowserslist: ['last 10 versions'], // добавляет вендорные префиксы для браузера 
-        grid: true // добавляет вендорные префиксы для гридов 
+        overrideBrowserslist: ['last 10 versions'], 
+        grid: true
     }))
-    .pipe(dest('app/css')) // куда сохранять файл 
+    .pipe(dest('app/css')) 
     .pipe(browserSync.stream())
 }   
 
@@ -69,18 +68,18 @@ function cleanDist() {
     return del('dist')
 }
 
-function watching() { // безперерывный мониторинг файлов на измиения 
-    watch(['app/scss/**/*.scss'], styles); // ** - папки , * файлы
+function watching() { 
+    watch(['app/scss/**/*.scss'], styles);
     watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
     watch(['app/**/*.html']).on('change', browserSync.reload);
 }
-
 exports.styles = styles;
 exports.scripts = scripts;
 exports.browser = browser;
 exports.watching = watching;
 exports.images = images;
 exports.cleanDist = cleanDist;
+
 exports.build = series(cleanDist, images, build);
 
 exports.default = parallel(styles, scripts, browser, watching);
