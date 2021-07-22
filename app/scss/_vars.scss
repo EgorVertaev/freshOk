@@ -13,51 +13,5 @@ $silver-100: #F6F6F6;
 $focus-green-300: #D8E8C2;
 $content: #505050;
 
-
-%Lato-Light {
-    font-family: "Lato-Light", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-}
-
-%Lato-Regular {
-    font-family: "Lato-Regular", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-%Lato-Semibold {
-    font-family: "Lato-Semibold", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-}
-
-%Lato-Bold {
-    font-family: "Lato-Bold", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-}
-
-%Signika-Light {
-    font-family: "Signika-Light", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-}
-
-%Signika-Regular {
-    font-family: "Signika-Regular", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-%Signika-SemiBold {
-    font-family: "Signika-SemiBold", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-}
-
-%Signika-Bold {
-    font-family: "Signika-Bold", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-}
+$f-lato: "Lato", sans-serif;
+$f-signika: "Signika", sans-serif;

@@ -5,7 +5,8 @@
 @import 'global';
 
 .header {
-    letter-spacing: 0.05rem;
+    letter-spacing: 0.03rem;
+
     &__top {
         background-color: $dark-800;
         padding: 15px 0;
@@ -22,18 +23,18 @@
     }
 
     &__item:not(:last-child) {
-        margin-right: 25px ;
+        margin-right: 40px ;
     }
 
-    &__link--left {
-        margin-right: 10px;
+    &__item-info:not(:last-child) {
+        margin-right: 25px;
     }
 
 
     &__icon {
         width: 32px;
         height: 22px;
-        margin-right: 12px;
+        margin-right: 10px;
         fill: $white;
         transition: fill 0.2s linear;
     }
@@ -42,7 +43,6 @@
         display: flex;
         line-height: 1.5;
         color: $white;
-        @extend %Lato-Bold;
         font-size: 13px;
         text-transform: uppercase;
         transition: color 0.2s linear; 
@@ -67,30 +67,11 @@
         align-items: center;
     }
 
-    &__catalog {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        @extend %Lato-Semibold;
-        font-size: 14px;
-        letter-spacing: 0.03rem;
-        color: $green-900;
-        width: 240px;
-        height: 50px;
-        border: none;
-        border-radius: 6px;
-        padding: 16px 24px 17px 18px;
-        margin-right: 30px;
-        transition: background-color 0.2s linear, color 0.2s linear ;
-        &:hover {
-            background-color: $green-100;
-        }
-    
-        &:active {
-            color: rgb($green-900, 50%);
-            box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-        }
+    &__logo {
+        margin-right: 22px;
     }
+
+    
 
     &__search {
         display: flex;
@@ -107,13 +88,12 @@
         margin-right: 18px;
     }
 
-    &__search-item {
+    &__input {
         border: transparent;
         width: 100%;
         padding: 10px 0;
 
         &::placeholder {
-            @extend %Lato-Regular;
             font-size: 14px;
             color: $dark-800;
         }
@@ -123,7 +103,7 @@
         display: flex
     }
 
-    &__user-icon {
+    &__icon {
         fill: $white;
     }
 
@@ -146,7 +126,7 @@
         margin-right: 15px;
     }
 
-    &__user-num {
+    &__num {
         position: absolute;
         top: 0;
         left: 4px;
@@ -154,7 +134,6 @@
         height: 18px;
         background-color: $white; 
         border-radius: 50%;
-        @extend %Lato-Semibold;
         font-size: 10px;
         line-height: 1.9;
         color: $red;
@@ -162,8 +141,8 @@
     }
 }
 
+.slider-discont {
 
-.slider {
 
     &__item {
         background-repeat: no-repeat;
@@ -175,7 +154,6 @@
         display: flex;
         height: 56vh;
         align-items: center;
-        width: 100vw
     }
 
     &__content {
@@ -185,24 +163,29 @@
         padding: 20px 25px;
         color: $content;
         margin-bottom: 50px; 
-        @extend %Signika-Bold;
         line-height: 1.3; 
-        font-size: 60px;
         position: relative; 
-        width: 100vw;  
-        h2 {
-            font-size: 60px; 
-            text-transform: uppercase;
-        }
+    }
 
-        span {
-            color: $red;
-            text-transform: uppercase;
-        }
 
-        p {
-            font-size: 16px;
+    &__text {
+        font-family: $f-signika;
+        font-weight: 700;
+        color: $content;
+        font-size: 60px; 
+        text-transform: uppercase;
+        text-shadow: 0px 4px 0px $content;
+
+        &--red {
+            color: $red; 
+            text-shadow: 0px 4px 0px $red; 
         }
+    }
+
+    &__subtext {
+        font-family: $f-lato;
+        font-weight: 400;
+        font-size: 16px;
     }
 
     .slick-prev,
@@ -232,7 +215,7 @@
 }
 
 .advantages {
-    background-color: #E5E5E5;
+    background-color: #F6F6F6;;
     padding: 45px 0;
 
     &__list {
@@ -253,48 +236,21 @@
 
     &__content {
         max-width: 200px;
-        h2 {
-            @extend %Lato-Bold;
-            font-size: 16px;
-        }
+    }
 
-        P {
-            @extend %Lato-Regular;
-
-        }
+    &__title {
+        display: block;
     }
 }
 
-.product {
-    background-color: #f6f6f6;;
+.top-product {
+    background-color: #ffffff;;
     padding: 70px 0;
+    text-align: center;
 
     &__title {
         text-align: center;
         margin-bottom: 30px;
-    }
-
-    &__filter {
-        text-align: center;
-        margin-bottom: 50px;
-    }
-
-    &__button {
-        @extend %Lato-Bold;
-        font-size: 15px;
-        color: $content;
-        text-transform: uppercase;
-        background-color: transparent; 
-        border: none;
-        border-bottom: 3px solid transparent;
-        padding: 0;
-
-        &:not(:last-child) {
-            margin-right: 25px;
-        }
-        &:hover {
-            border-bottom: 3px solid rgb($green-900, 20%);
-        }
     }
 
     &__list {
@@ -303,101 +259,16 @@
         grid-gap: 30px;
         margin-bottom: 50px;
     }
-
-    &__card {
-        background-color: $white;
-        border: 1px solid rgba(17, 17, 17, 0.2);
-        border-radius: 6px;
-        width: 300px;
-        height: 410px;
-    }
-
-    &__card-top {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px 12px 7px;
-    }
-
-    &__badges {
-       :first-child {
-           margin-bottom: 5px;
-       }
-    }
-
-    &__favorit {
-        fill: $silver-600;
-    }
-
-    &__card-body {
-        background-repeat: no-repeat;
-        background-position: center;
-
-        width: 100%;
-        height: 215px;
-        object-fit: contain;
-    }
-
-    &__card-bottom {
-        display: flex;
-        flex-direction: column;
-        padding: 18px;
-    }
-
-    &__inner {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-    }
-
-    &__subtitle {
-        @extend %Lato-Semibold;
-        line-height: 1.4;
-        height: 65px;
-        h3 {
-            font-size: 14px;
-            font-weight: 600;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-    }
-
-    &__price {
-        @extend %Lato-Regular;
-        color: $content;
-        line-height: 1.2;
-        span {
-            display: block;
-            position: relative;
-        }
-
-        span:first-child {
-            color: $silver-600;
-
-            &::after {
-                content: "";
-                position: absolute;
-                bottom: 10px;
-                left: 0;
-                right: 0;
-                height: 1px;
-                background-color: $silver-600;
-                transform: rotate(346deg);
-            }
-        }
-
-    }
-
-    &__btn {
-        text-align: center;
-    }
 }
 
 .footer {
     background-color: $dark-800;
     color: $white;
-    &__top {
-        padding: 26px 0;
+    padding-top: 26px;
+
+    &__logo {
+        display: block;
+        margin-bottom: 26px;
     }
 
     &__content {
@@ -408,8 +279,8 @@
     }
 
     &__title {
+        display: block;
         font-size: 14px;
-        @extend %Lato-Regular;
         margin-bottom: 15px;
     }
 
@@ -426,7 +297,6 @@
         padding: 12px;
 
         &::placeholder {
-            @extend %Lato-Regular;
             font-size: 14px; 
             color: $dark-800; 
         }
@@ -435,32 +305,28 @@
     &__inner {
         display: flex;
         justify-content: space-between;
-        @extend %Lato-Regular;
+
         font-size: 14px;
     }
 
     &__list {
-
-        &:not(:last-child) {
-            margin-right: 85px;
-        }
+        display: flex;
+        flex-wrap: wrap;
     }
 
     &__item {
-
-        &:not(:last-child) {
-            margin-bottom: 18px;
-        }
+        width: 33.333%;
     }
 
     &__link {
+        font-weight: 400;
+        transition: color 0.2s linear;
+        &:hover {
+            color: $silver-600;
+        }
     }
 
-    &__contact {
-        
-    }
-
-    &__address {
+    &__info {
         font-style: normal;
         margin-bottom: 18px;
         font-weight: 400;
@@ -487,8 +353,7 @@
         
     }
 
-
-    &__social-icon {
+    &__icon {
         fill: $white;
         transition: fill 0.3s linear;
 
@@ -509,21 +374,24 @@
     }
 
     &__copy {
-        span {
-            text-transform: uppercase;
-        }
-        
+        text-transform: uppercase; 
     }
 
-    
+    &__accept {
+        display: flex;
+    }
+
+    &__accept-item {
+        &:first-child {
+            margin-right: 15px;
+        }
+    }
+
     &__accept-icon {
         fill: $white;
-        
+        transition: fill 0.2s linear;
         &:hover {
             fill: $silver-600;
         }
     }
 }
-
-
-@import 'media';
