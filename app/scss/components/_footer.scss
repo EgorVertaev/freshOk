@@ -1,0 +1,134 @@
+.footer {
+    background-color: $dark-800;
+    color: $white;
+    padding-top: 26px;
+
+    &__logo {
+        display: block;
+        margin-bottom: 26px;
+    }
+
+    &__content {
+        display: flex;
+        padding-bottom: 30px;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    &__title {
+        display: block;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    &__form {
+        display: flex;
+    }
+
+    &__input {
+        max-width: 182px;
+        width: 100%;
+        height: 40px;
+        border: transparent;
+        border-radius: 6px 0 0 6px;
+        padding: 12px;
+
+        &::placeholder {
+            font-size: 14px; 
+            color: $dark-800; 
+        }
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+
+        font-size: 14px;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        width: 33.333%;
+    }
+
+    &__link {
+        font-weight: 400;
+        transition: color 0.2s linear;
+        &:hover {
+            color: $silver-600;
+        }
+    }
+
+    &__info {
+        font-style: normal;
+        margin-bottom: 18px;
+        font-weight: 400;
+
+        span {
+            margin-right: 12px;
+        }
+
+        p:not(:last-child) {
+            margin-bottom: 18px;
+        }
+    }
+
+    &__social-list {
+        display: flex;
+        padding-left: 15px;
+    }
+
+    &__social-item {
+
+        &:not(:last-child) {
+            margin-right: 12px;
+        }
+        
+    }
+
+    &__icon {
+        fill: $white;
+        transition: fill 0.3s linear;
+
+        &:hover {
+            fill: $silver-600; 
+        }
+    }
+
+    &__bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 17px 0;
+    }
+
+    &__bottom-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__copy {
+        text-transform: uppercase; 
+    }
+
+    &__accept {
+        display: flex;
+    }
+
+    &__accept-item {
+        &:first-child {
+            margin-right: 15px;
+        }
+    }
+
+    &__accept-icon {
+        fill: $white;
+        transition: fill 0.2s linear;
+        &:hover {
+            fill: $silver-600;
+        }
+    }
+}
