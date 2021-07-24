@@ -1,0 +1,105 @@
+.ournews {
+    background-color: $white;
+    padding: 60px 0 70px;
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    &__all {
+        color: $green-900;
+        font-size: 18px;
+        padding-right: 6px;
+        font-weight: 700;
+        position: relative;
+        transition: color 0.2s;
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            height: 2px;
+            width: 100%;
+            background-color: $green-900;
+            transition: background-color 0.2s linear;
+        }
+
+        &:hover {
+            color: #4D800C;
+
+            &::after {
+                background-color:#4D800C ;
+            }
+        }
+
+        &:focus {
+            outline-color: #E0EDCF;
+        }
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__item {
+        max-width: 410px;
+        border-radius: 6px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+    }
+
+    &__link {
+        transition: color 0.2s linear;
+
+        &:hover {
+            color: $green-900;
+        }
+
+        &:focus {
+            outline-color: #E0EDCF;
+        }
+    }
+
+    &__img {
+        object-fit: contain;
+        margin-bottom: 10px;
+    }
+
+    &__subtitle {
+        font-size: 17px;
+        padding: 0 18px 14px;
+        @include hidden(4); 
+    }
+
+    &__data {
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.03rem;
+        background-color: $white;
+        color: $dark-900;
+        width: 65px;
+        height: 75px;
+        padding-top: 18px;
+        border-radius: 0 0 6px 6px;
+        position: absolute;
+        top: 0;
+        left: 20px;
+    }
+
+    &__month {
+        display: block;
+        font-weight: 700;
+        font-size: 10px;
+    }
+
+    &__num {
+        font-family: $f-signika;
+        font-weight: 600;
+        font-size: 30px;
+    }
+}

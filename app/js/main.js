@@ -6,5 +6,15 @@ $(function(){
         nextArrow: '<button type="button" class="slick-next"><img src="images/icons/right.svg" alt=""></button>',
     });
 
-    var mixer = mixitup('.top-product__list');
+    let containerEl1 = document.querySelector ('[data-ref="container-1"]');
+    let containerEl2 = document.querySelector ('[data-ref="container-2"]');
+    
+    let config = {
+        controls: {
+            scope: 'local'
+        }
+    };
+
+    var mixer = mixitup(containerEl1, config);
+    var mixer1 = mixitup(containerEl2, config);
 })

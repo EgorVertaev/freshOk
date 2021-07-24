@@ -1,0 +1,39 @@
+.brands {
+    background-color: #fff;
+    padding-top: 72px;
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__link {
+        position: relative;
+        
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 1;
+            background-color: rgb($white, 50%);
+            transition: opacity 0.3s linear;
+        }
+
+        &:hover::after{
+            opacity: 0;
+        }
+
+        &:focus {
+            outline-color: #E0EDCF;
+        }
+    }
+
+    &__img {
+        object-fit: contain;
+    }
+}
+

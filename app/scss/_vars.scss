@@ -15,3 +15,13 @@ $content: #505050;
 
 $f-lato: "Lato", sans-serif;
 $f-signika: "Signika", sans-serif;
+
+
+
+@mixin hidden($lines: 2) { 
+    -webkit-line-clamp: $lines;
+    display: -webkit-box; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}

@@ -1,11 +1,15 @@
 .footer {
     background-color: $dark-800;
     color: $white;
-    padding-top: 26px;
+    padding-top: 30px;
 
     &__logo {
-        display: block;
-        margin-bottom: 26px;
+        display: inline-block;
+        margin-bottom: 22px;
+
+        &:focus {
+            outline-color: #E0EDCF;
+        }
     }
 
     &__content {
@@ -37,12 +41,16 @@
             font-size: 14px; 
             color: $dark-800; 
         }
+
+        &:focus {
+            outline-color: #E0EDCF;
+        }
     }
 
     &__inner {
         display: flex;
         justify-content: space-between;
-
+        max-width: 470px;
         font-size: 14px;
     }
 
@@ -56,10 +64,17 @@
     }
 
     &__link {
+        max-width: 150px;
         font-weight: 400;
         transition: color 0.2s linear;
+        border-bottom: 3px solid transparent;       
         &:hover {
             color: $silver-600;
+        }
+
+        &:focus {
+            border-bottom: 3px solid rgb($green-900, 50%);
+            outline: 0;
         }
     }
 
@@ -75,19 +90,34 @@
         p:not(:last-child) {
             margin-bottom: 18px;
         }
+
+        a:focus {
+            outline-color: #E0EDCF;
+        }
     }
 
     &__social-list {
         display: flex;
-        padding-left: 15px;
+        align-items: center;
+        padding-left: 10px;
     }
 
     &__social-item {
 
         &:not(:last-child) {
-            margin-right: 12px;
+            margin-right: 16px;
         }
         
+        &:focus {
+            outline-color: #E0EDCF;
+        }  
+    }
+
+    &__social-link {
+
+        &:focus {
+            outline-color: #E0EDCF;
+        }
     }
 
     &__icon {
@@ -120,7 +150,13 @@
 
     &__accept-item {
         &:first-child {
-            margin-right: 15px;
+            margin-right: 20px;
+        }
+    }
+
+    &__accept-link {
+        &:focus {
+            outline-color: #E0EDCF;
         }
     }
 
