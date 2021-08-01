@@ -10,16 +10,17 @@
     line-height: 1.3;
     max-width: 300px;
     width: fit-content;
-    @include hidden(1);
+    white-space: nowrap;
     transition: background-color 0.3s ease, fill 0.2s, border-color 0.3s, color 0.2s;
     
     &:focus {
         outline: 0;
     }
 
-    &--showmore {
-        margin: 0 auto;
+    &--transparent {
+        display: block;
         border: 1px solid #B1D286;
+        margin: 0 auto;
         
         &:hover {
             background-color: $green-100;
@@ -63,11 +64,15 @@
             width: 8px;
             height: 4px;
             background-image: url(../images/icons/chevron-nav.svg);
-
+            transition: transform 0.2s linear;
         }
 
         &:hover {
-            background-color: $green-100;
+            background-color: $green-200;
+            
+            &::after {
+                transform: rotate(180deg);
+            }
         }
     
         &:active {
@@ -80,7 +85,7 @@
         }
     }
 
-    &--search {
+    &--dark {
         background-color: $dark-800;
         color: $white;
         font-weight: 600;
@@ -88,6 +93,7 @@
         padding: 16px 52px;
         text-transform: uppercase;
         border-radius: 0 6px 6px 0;
+        // overflow: hidden;
 
         &:hover {
             background-color: rgb($dark-800, 85%);
@@ -127,7 +133,7 @@
         }
     }
 
-    &--buy {
+    &--green {
         background-color: $green-900;
         border-radius: 6px;
         color: $white;
@@ -146,9 +152,25 @@
             color: rgb($white, 50%);
             box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
         }
+
+        &-promo {
+            display: block;
+            margin: 0 auto;
+        }
     }
 
-    &--buy-sm {
+    &--favorit {
+        padding: 0;
+        font-size: 0;
+        fill: $silver-600;
+        transition: fill 0.2s linear;
+
+        &:hover {
+            fill: $yellow;
+        }
+    }
+
+    &--green-sm {
         padding: 8px;
         background-color: $green-900;
         border-radius: 6px;
@@ -167,4 +189,77 @@
             box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
         }
     }
+
+    &--green-large {
+        max-width: 470px;
+        width: 100%;
+        background-color: $green-900;
+        color: $white;
+        border-radius: 0;
+        padding: 22px 20px;
+
+        &:hover {
+            background-color: #4D810C;
+        }
+
+         
+        &:focus {
+            box-shadow: 0px 0px 0px 4px #E0EDCF;
+        }
+
+        &:active {
+            color: rgb($white, 50%);
+            box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+    }
+}
+
+.btn-close {
+    background-color: transparent;
+    padding: 10px;
+    display: flex;
+    border-radius: 6px;
+    justify-content: center;
+    text-align: center;
+    transition: background-color 0.2s linear;
+
+    &:hover {
+        background-color: $green-200;
+    }
+
+    &:active {
+        background-color: $green-900;
+    }
+
+    &:focus {
+        outline-color: #E0EDCF ;
+    }
+
+    &--sm {
+        padding: 3px;
+        border-radius: 2px;
+    }
+}
+
+.btn-close--sm {
+    background-color: transparent;
+    display: flex;
+    padding: 3px;
+    border-radius: 2px;
+    justify-content: center;
+    text-align: center;
+    transition: background-color 0.2s linear;
+
+    &:hover {
+        background-color: $green-200;
+    }
+
+    &:active {
+        background-color: $green-900;
+    }
+
+    &:focus {
+        outline-color: #E0EDCF ;
+    }
+
 }

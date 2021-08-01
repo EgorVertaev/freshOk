@@ -1,6 +1,8 @@
 .badge {
     display: block;
     width: fit-content;
+    overflow: hidden;
+    text-overflow: ellipsis;
     max-width: 100px;
     font-family: $f-lato;
     font-weight: 700;
@@ -14,14 +16,10 @@
     border-radius: 6px;
 
     &--sale {
-        display: inline-block;
         background-color: $red;
-        max-width: 50px;
     }
 
     &--hit {
-        display: inline-block;
         background-color: $orange;
-        max-width: 50px;
     }
 }

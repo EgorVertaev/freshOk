@@ -6,14 +6,43 @@ $(function(){
         nextArrow: '<button type="button" class="slick-next"><img src="images/icons/right.svg" alt=""></button>',
     });
 
-    let containerEl1 = document.querySelector ('[data-ref="container-1"]');
-    let containerEl2 = document.querySelector ('[data-ref="container-2"]');
+    $('.brands__list').slick({
+        arrows: false,
+        dots: true,
+        infinite: false,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+
+    });
+
+    window.onscroll = function showHeader() {
+        let header = document.querySelector('.header__bottom')
+
+        if(window.pageYOffset > 52) {
+            header.classList.add('header__bottom--scroll')
+        } else {
+            header.classList.remove('header__bottom--scroll')
+        }
+    };
+
+    $('.header__user-link--card').on('click', function(event) {
+        event.preventDefault();
+        $('.basket').addClass('basket--show');
+    });
+    
+    $('.btn-close').on('click', function(event) {
+        event.preventDefault();
+        $('.basket').removeClass('basket--show');
+    });
+    
+    let containerEl1 = document.querySelector ('.top-product');
+    let containerEl2 = document.querySelector ('.promo');
     
     let config = {
         controls: {
             scope: 'local'
         }
-    };
+    };    
 
     var mixer = mixitup(containerEl1, config);
     var mixer1 = mixitup(containerEl2, config);

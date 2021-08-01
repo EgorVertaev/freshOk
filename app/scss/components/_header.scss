@@ -1,6 +1,5 @@
 .header {
     letter-spacing: 0.03rem;
-
     &__top {
         background-color: $dark-800;
         padding: 15px 0;
@@ -32,8 +31,63 @@
         transition: fill 0.2s linear;
     }
 
-    &__btn-catalog {
-        margin-right: 30px;
+    &__catalog {
+        position: relative;
+
+        &:hover {
+            .header__catalog-list {
+                display: block;
+            }
+
+            .header__catalog-btn {
+                background-color: $green-200;
+            }
+        }
+    }
+   
+    &__catalog-list {
+        display: none;
+        position: absolute;
+        top: 46px;
+        left: 0;
+        right: 0;
+    }
+
+    &__catalog-item {
+        background-color: $white;
+        border-bottom: 1px solid $silver-600;
+    }
+
+    &__catalog-link {
+        display: block;
+        font-weight: 400;
+        font-size: 16px;
+        padding: 15px 10px 15px 24px;
+        position: relative;
+        transition: color .2s linear;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 3px;
+            height: 100%;
+            background-color: transparent;
+            transition: background-color .2s linear;
+        }
+
+        &:hover {
+            color: $green-900;
+
+            &::before {
+                background-color: $green-900;
+            }
+        }
+
+        &:focus {
+            outline-color: #E0EDCF;
+        }
     }
 
     &__link {
@@ -59,8 +113,20 @@
     }
 
     &__bottom {
+        position: fixed;
+        z-index: 99;
+        top: 52px;
+        right: 0;
+        left: 0;
         background-color: $green-900;
         padding: 20px 0;
+        transition: top 0.2s ease;
+        
+    }
+
+    &__bottom--scroll {
+        top: 0;
+        padding: 10px 0;
     }
 
     &__wrapper {
@@ -70,7 +136,8 @@
 
     &__logo {
         margin-right: 24px;
-
+        max-width: 200px;
+        width: 100%;
         &:focus {
             outline-color: #E0EDCF;
         }
@@ -79,12 +146,11 @@
     &__search {
         display: flex;
         align-items: center;
-        background-color: $white;
-        max-width: 420px;
+        max-width: 612px;
         width: 100%;
-        border-radius: 6px 0 0 6px;
-        padding-left: 50px;
         position: relative;
+        margin-left: 35px;
+
 
         &::before {
             content: "";
@@ -94,7 +160,7 @@
             transform: translateY(-50%);
             width: 20px;
             height: 20px;
-            background-image: url(../../images/icons/search.svg);
+            background-image: url(../images/icons/search.svg);
             background-repeat: no-repeat;
         }
     }
@@ -104,10 +170,11 @@
     }
 
     &__input {
-        border: transparent;
+        border: none;
         width: 100%;
-        padding: 15px 0;
-
+        padding: 15px 10px 15px 50px;
+        border-radius: 6px 0 0 6px;
+      
         &::placeholder {
             font-size: 14px;
             color: $dark-800;
@@ -144,6 +211,7 @@
         position: relative;
         width: 50px;
         height: 50px;
+        padding-top: 4px;
         border-radius: 3px;
         transition: background-color 0.2s linear;
 
@@ -162,7 +230,7 @@
 
     &__num {
         position: absolute;
-        top: 0;
+        top: 4px;
         left: 4px;
         width: 18px;
         height: 18px;

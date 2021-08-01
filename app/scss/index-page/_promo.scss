@@ -1,22 +1,18 @@
 .promo {
     background-color: #ffffff;
-    text-align: center;
     padding: 72px 0;
 
     &__title {
         margin-bottom: 28px;
+        text-align: center;
     }
 
     &__list {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(2, 125px);
+        grid-auto-rows: 125px;
         grid-gap: 30px;
         margin-bottom: 48px;
-    }
-
-    &__item {
-        text-align: left;
     }
 
     &__link {

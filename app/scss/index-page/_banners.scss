@@ -13,12 +13,22 @@
         border-radius: 6px;
         padding: 68px 0 76px 32px;
         width: 52%;
+
         &:not(:last-child) {
             margin-right: 30px;
         }
 
         &--sm {
             width: 25%;
+
+            article {
+                max-width: 200px;
+                color: $content;
+            }
+
+            a {
+                border-color: $content;
+            }
         }
         
     }
@@ -27,10 +37,7 @@
         text-transform: uppercase;
         color: $white;
         max-width: 400px;
-        &--sm {
-            max-width: 200px;
-            color: $content;
-        }
+
     }
     
     &__tilte {
@@ -51,21 +58,16 @@
     
     &__link {
         max-width: 200px;
-        @include hidden;
         border-bottom: 2px solid $white;
         transition: color 0.3s, border-color 0.3s;
-
-        &--sm {
-            border-color: $content;
-        }
-
         &:hover {
             color: $green-900;
             border-color: $green-900;
         }
-
+        
         &:focus {
             outline-color: #E0EDCF;
         }
+        
     }
 }

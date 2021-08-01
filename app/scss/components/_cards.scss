@@ -1,31 +1,30 @@
 .product-card {
-    display: flex;
-    flex-direction: column;
-    background-color: $white;
-    border: 1px solid rgba(17, 17, 17, 0.2);
-    border-radius: 6px;
     height: 100%;
-    max-width: 300px;
-    text-align: left;
-    transition: border-color 0.3s linear;
 
-    &:hover {
-        border-color: $green-900;
-    }
+    &__link {
+        display: flex;
+        flex-direction: column;
+        background-color: $white;
+        border: 1px solid rgba(17, 17, 17, 0.2);
+        border-radius: 6px;
+        max-width: 300px;
+        height: 100%;
+        transition: border-color 0.3s linear;
+        
+        &:hover {
+            border-color: $green-900;
+        }
+    } 
 
     &__top {
-        height: 57px;
         display: flex;
         justify-content: space-between;
         padding: 12px 12px 7px;
     }
 
-    &__favorit {
-        fill: $silver-600;
-        transition: fill 0.2s linear;
-
-        &:hover {
-            fill: $yellow;
+    &__badges {
+        span:not(:last-child) {
+            margin-bottom: 2px;
         }
     }
 
@@ -38,7 +37,6 @@
         height: 215px;
         object-fit: cover;
     }
-
 
     &__subtitle {
         line-height: 1.4;
@@ -57,44 +55,48 @@
         padding: 0 18px 17px;
     }
 
-    &__price {
+    &__cost {
         max-width: 100px;
+        width: fit-content;
+        display: block;
         color: $content;
         line-height: 1.2; 
-        @include hidden(1);  
-    }
+        @include hidden(1); 
+        
+        &--old {
+            color: $silver-600;
+            position: relative;
 
-    &__oldprice {
-        max-width: 100px;
-        display: block;
-        color: $silver-600;
-        position: relative;
-        @include hidden(1);
-
-        &::after {
-            content: "";
-            position: absolute;
-            bottom: 10px;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background-color: $silver-600;
-            transform: rotate(346deg);
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 10px;
+                left: 0;
+                right: 0;
+                height: 1px;
+                background-color: $silver-600;
+                transform: rotate(346deg);
+            }
         }
     }
+
 }
 
-.prod-card-sm {
-    display: flex;
-    border: 1px solid rgba(17, 17, 17, 0.2);
-    border-radius: 6px;
-    padding: 15px 12px 10px;
-    max-width: 300px;
-    transition: border-color 0.3s linear;
+.promo-card {
+
+    &__link {
+        display: flex;
+        border: 1px solid rgba(17, 17, 17, 0.2);
+        border-radius: 6px;
+        padding: 15px 12px 10px;
+        max-width: 300px;
+        transition: border-color 0.3s linear;
+    }
 
     &:hover {
         border-color: $green-900;
     }
+
 
     &__img {
         object-fit: contain;
@@ -138,16 +140,35 @@
         padding-right: 20px;
     }
 
-    &__newprice {
+    &__cost {
         display: block;
         font-size: 20px;
         font-weight: 600;
         line-height: 1;
         color: $content;
+        max-width: 60px;
         @include hidden(1);
 
         span {
             font-size: 14px;
+        }
+
+        &--old {
+            font-weight: 400;
+            font-size: 12px;
+            color: $silver-600;
+            position: relative;
+            @include hidden(1);
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 8px;
+                left: 0;
+                right: 0;
+                height: 1px;
+                background-color: $silver-600;
+                transform: rotate(346deg);
+            }  
         }
     }
 
@@ -170,7 +191,7 @@
         }
     }
 
-    &__reting {
+    &__rating {
 
         font-weight: 700;
         font-size: 14px;

@@ -12,9 +12,11 @@
         padding-left: 70px;
         max-width: 270px;
         width: 100%;
+
         &:not(:last-child) {
             margin-right: 53px;
         }
+        
         &::after {
             content:"";
             position: absolute;
@@ -40,6 +42,7 @@
     }
 
     &__content {
+        font-weight: 400;
         max-width: 320px;
         @include hidden(4);
     }
