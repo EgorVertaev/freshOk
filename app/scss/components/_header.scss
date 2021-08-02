@@ -149,7 +149,7 @@
         max-width: 612px;
         width: 100%;
         position: relative;
-        margin-left: 35px;
+        margin-left: 30px;
 
 
         &::before {
@@ -225,7 +225,7 @@
     }
 
     &__user-item:not(:last-child) {
-        margin-right: 10px;
+        margin-right: 11px;
     }
 
     &__num {
