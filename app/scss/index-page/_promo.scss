@@ -1,10 +1,22 @@
 .promo {
     background-color: #ffffff;
-    padding: 68px 0 72px;
+    padding: 64px 0 75px;
+
+    @include r($md) {
+        padding: 55px 0 60px;
+    }
+
+    @include r($sm) {
+        padding: 45px 0 50px;
+    }
 
     &__title {
         margin-bottom: 32px;
         text-align: center;
+
+        @include r($sm) {
+            margin-bottom: 25px;
+        }
     }
 
     &__list {
@@ -12,12 +24,44 @@
         grid-template-columns: repeat(4, 1fr);
         grid-auto-rows: 125px;
         grid-gap: 30px;
-        margin-bottom: 48px;
+        margin-bottom: 41px;
+
+        @include r($xl) {
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 25px;
+        }
+
+        @include r($lg) {
+            grid-gap: 20px;
+            margin-bottom: 35px;
+        }
+
+        @include r($md) {
+    
+            grid-template-columns: 50% 50%;
+            grid-gap: 10px;
+            margin-bottom: 35px;
+        }
+
+        @include r($sm) {
+            display: block;
+            margin-bottom: 30px;
+        }   
     }
 
     &__link {
-        display: block;
+        display: block;   
     }
+
+    &__item {
+        &:not(:last-child) {
+           
+            @include r($sm) {
+                margin-bottom: 15px;
+            }
+        }
+    }
+
 }
 
 

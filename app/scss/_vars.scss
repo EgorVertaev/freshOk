@@ -26,8 +26,21 @@ $f-signika: "Signika", sans-serif;
     text-overflow: ellipsis; 
 }
 
-// @mixin r($width) {
-//     @media only screen and (max-width: $width + "px") {
-//         @content
-//     }
-// }
+@mixin maxw($max-width: 150px) { 
+    max-width: $max-width;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+$xxl: 1600;
+$xl: 1200;
+$lg: 992;
+$md: 768;
+$sm: 576;
+
+@mixin r($width) {
+    @media only screen and (max-width: $width + "px") {
+        @content
+    }
+}

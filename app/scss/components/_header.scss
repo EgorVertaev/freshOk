@@ -1,8 +1,18 @@
 .header {
     letter-spacing: 0.03rem;
+
     &__top {
         background-color: $dark-800;
         padding: 15px 0;
+
+        @include r($md) {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            padding: 2px 0;
+        }
     }
 
     &__inner {
@@ -13,10 +23,15 @@
     &__list {
         display: flex;
         align-items: center;
-    }
 
+    }
+    
     &__item:not(:last-child) {
-        margin-right: 40px ;
+        margin-right: 40px;
+
+        @include r ($lg) {
+            margin-right: 29px;
+        }
     }
 
     &__item-info:not(:last-child) {
@@ -29,10 +44,27 @@
         margin-right: 10px;
         fill: $white;
         transition: fill 0.2s linear;
+
+        @include r($sm) {
+            margin-right: -3px;
+        }
+
+    }
+
+    &__list--right {
+
+        @include r($md) {
+            display: none;
+        }
     }
 
     &__catalog {
         position: relative;
+        margin-right: 30px;
+
+        @include r($md) {
+            margin-right: 0;
+        }
 
         &:hover {
             .header__catalog-list {
@@ -91,13 +123,24 @@
     }
 
     &__link {
-        max-width: 300px;
         display: flex;
         line-height: 1.5;
         color: $white;
         font-size: 13px;
         text-transform: uppercase;
         transition: color 0.2s linear; 
+
+        span {
+            @include maxw(200px);
+
+            @include r($sm) {
+                display: none;
+            }
+        }
+
+        a {
+            @include maxw(120px);
+        }
 
         &:hover {
             color: $silver-600;
@@ -118,26 +161,65 @@
         top: 52px;
         right: 0;
         left: 0;
+        line-height: 1;
         background-color: $green-900;
         padding: 20px 0;
         transition: top 0.2s ease;
+
+        @include r($md) {
+            padding: 10px 0;
+            top: 47px;
+        }
+
+        @include r($sm) {
+            padding: 11px 0 7px
+        }
         
     }
 
     &__bottom--scroll {
         top: 0;
         padding: 10px 0;
+
+        @include r($md) {
+            top: 47px;
+        }
     }
 
     &__wrapper {
         display: flex;
         align-items: center;
+
+        @include r($lg) {
+            justify-content: space-between;
+        }
     }
 
     &__logo {
         margin-right: 24px;
         max-width: 200px;
         width: 100%;
+
+        @include r($sm) {
+            display: none;
+        }
+
+        &:focus {
+            outline-color: #E0EDCF;
+        }
+    }
+
+    &__logo-sm {
+        display: none;
+        max-width: 36px;
+        width: 100%;
+        margin-right: 24px;
+        
+        @include r($sm) {
+            display: block;
+            margin-right: 0;
+        }
+
         &:focus {
             outline-color: #E0EDCF;
         }
@@ -146,11 +228,48 @@
     &__search {
         display: flex;
         align-items: center;
-        max-width: 612px;
+        max-width: 577px;
         width: 100%;
         position: relative;
-        margin-left: 30px;
+        margin-right: 35px;
 
+       
+
+        @include r($xl) {
+            margin-right: 15px;
+        }
+
+        @include r($lg) {
+            display: none;
+            margin-right: 0;
+            position: fixed;
+            top: 175px;
+            right: 100px;
+        }
+
+        @include r($md) {
+            max-width: 768px;
+            top: 133px;
+            right: 0;
+            left: 0;
+        }
+        @include r($sm) {
+            top: 110px;
+        }
+
+        &--show {
+
+            @include r($lg) {
+                display: flex;
+            }
+        }
+    }
+
+    &__icon-search {
+        margin-right: 18px;
+    }
+
+    &__input-label {
 
         &::before {
             content: "";
@@ -165,16 +284,20 @@
         }
     }
 
-    &__icon-search {
-        margin-right: 18px;
-    }
-
     &__input {
         border: none;
-        width: 100%;
-        padding: 15px 10px 15px 50px;
+        flex: 1 1 auto;
+        line-height: 1;
+        padding: 17px 10px 15px 50px;
         border-radius: 6px 0 0 6px;
-      
+        
+        @include r ($md) {
+            border-radius: 0;
+        }
+        @include r ($sm) {
+            padding: 14px 10px 14px 50px;
+        }
+
         &::placeholder {
             font-size: 14px;
             color: $dark-800;
@@ -185,10 +308,6 @@
         }
     }
 
-    &__btn-search {
-        margin-right: 35px;
-    }
-
     &__user {
         display: flex
     }
@@ -196,6 +315,7 @@
     &__user-icon {
         fill: $white;
     }
+
 
     &__user-link {
 
@@ -215,6 +335,18 @@
         border-radius: 3px;
         transition: background-color 0.2s linear;
 
+        @include r($sm) {
+            width: 44px;
+            height: 44px;
+        }
+
+        svg {
+            @include r($sm) {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
         &:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }  
@@ -224,8 +356,35 @@
         }
     }
 
+    &__user-item--search {
+        display: none;
+
+        @include r($lg) {
+            display: flex;
+        }
+      
+    }
+
+    &__user-item--user {
+
+        @include r($md) {
+            display: none;
+        }
+    }
+
+    &__user-item--favorit {
+
+        @include r($md) {
+            display: none;
+        }
+    }
+
     &__user-item:not(:last-child) {
         margin-right: 11px;
+
+        @include r($sm) {
+            margin-right: 6px;
+        }
     }
 
     &__num {
@@ -240,5 +399,10 @@
         line-height: 1.9;
         color: $red;
         text-align: center;
+
+        @include r($sm) {
+            top: 0;
+            left: 0;
+        }
     }
 }

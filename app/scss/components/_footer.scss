@@ -2,10 +2,19 @@
     background-color: $dark-800;
     color: $white;
     padding-top: 30px;
+    
+    @include r($sm) {
+        padding-top: 24px;
+    }
 
     &__logo {
         display: inline-block;
         margin-bottom: 22px;
+
+        @include r($md) {
+            display: flex;
+            justify-content: center;
+        }
 
         &:focus {
             outline-color: #E0EDCF;
@@ -17,7 +26,21 @@
         padding-bottom: 30px;
         justify-content: space-between;
         position: relative;
-    }
+        margin: 0 -15px;
+
+        @include r($lg) {
+            flex-wrap: wrap;
+        }
+
+        @include r($md) {
+            align-items: center;
+            flex-direction: column-reverse;
+        }
+
+        @include r($sm) {
+            padding-bottom: 20px;
+        }
+     }
 
     &__title {
         display: block;
@@ -30,8 +53,18 @@
     }
 
     &__subscribe {
-        margin-right: 150px;
+        margin-right: 60px;
+
+        @include r($xl) {
+            margin-right: 30px;
+        }
+
+        @include r($md) {
+            padding-top: 20px;
+            margin-right: 0;
+        }
     }
+
     &__input {
         max-width: 182px;
         width: 100%;
@@ -49,34 +82,64 @@
         }
     }
 
-    &__list {
-        display: flex;
-        flex-wrap: wrap;
-        max-width: 620px;
-        
-    }
-
-    &__item {
-        max-width: 150px;
-        width: 33.3333%;
-        &:not(:nth-child(3n+3)) {
-            margin-right: 57px;
+    &__box {
+        @include r($md) {
+            width: 100%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
     }
 
+    &__list {
+        column-count: 3;
+        column-gap: 83px;
+        max-width: 620px;
+
+        @include r($xl) {
+            column-gap: 20px;
+        }
+
+        @include r($md) {
+            max-width: 350px;
+            margin: 0 auto;
+            padding: 20px 0 20px;
+        }
+
+        @include r($sm) {
+            column-count: 2;
+            padding: 20px 0 5px 50px;
+        }
+    }
+
+    &__item {
+        margin-bottom: 15px;
+    }
+
     &__link {
+        display: block;
+        width: fit-content;
         font-weight: 400;
         font-size: 14px;
         transition: color 0.2s linear;
         border-bottom: 3px solid transparent;
+        @include maxw(150px);
               
-        &:hover {
+        &:hover { 
             color: $silver-600;
         }
 
         &:focus {
             border-bottom: 3px solid rgb($green-900, 50%);
             outline: 0;
+        }
+    }
+
+    &__contact {
+       
+        @include r($md) {
+            width: 100%;
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
     }
 
@@ -87,6 +150,7 @@
 
         span {
             margin-right: 12px;
+
         }
 
         p:not(:last-child) {
@@ -95,7 +159,7 @@
 
         a {
             border-bottom: 3px solid transparent;
-            
+
             &:hover {
                 color: $silver-600;
             }
@@ -109,6 +173,8 @@
 
     &__info-link {
         border-bottom: 3px solid transparent;
+        max-width: 220px;
+        @include hidden(2);
 
         &:hover {
             color: $silver-600;
@@ -124,6 +190,10 @@
         display: flex;
         align-items: center;
         padding-left: 10px;
+
+        @include r($md) {
+            justify-content: center;
+        }
     }
 
     &__social-item {
@@ -156,12 +226,20 @@
     &__bottom {
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         padding: 17px 0;
+
+        @include r($sm) {
+            padding: 28px 0 20px;
+        }
     }
 
     &__wrapper {
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        @include r($sm) {
+            flex-direction: column-reverse;
+        }
     }
 
     &__copy {
@@ -175,6 +253,10 @@
     &__accept-item {
         &:first-child {
             margin-right: 20px;
+
+            @include r($sm) {
+                margin-bottom: 20px;
+            }
         }
     }
 

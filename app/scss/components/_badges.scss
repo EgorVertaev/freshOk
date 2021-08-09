@@ -1,9 +1,7 @@
 .badge {
     display: block;
     width: fit-content;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 100px;
+    @include maxw(100px);
     font-family: $f-lato;
     font-weight: 700;
     font-size: 10px;

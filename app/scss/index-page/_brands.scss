@@ -2,6 +2,10 @@
     background-color: #fff;
     padding-top: 72px;
 
+    @include r($sm) {
+        padding-top: 50px;
+    }
+
     &__link {
         display: flex;
         justify-content: center;

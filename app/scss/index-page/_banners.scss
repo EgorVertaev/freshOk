@@ -1,9 +1,19 @@
 .banners {
     padding: 75px 0;
     background-color: #ffffff;
+    
+    @include r($sm) {
+        padding: 50px 0;
+    }
+
 
     &__list {
         display: flex;
+
+        @include r($lg) {
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
     }
 
     &__item {
@@ -14,12 +24,50 @@
         padding: 68px 0 76px 32px;
         width: 52%;
 
+        @include r($xl) {
+            padding: 68px 0 76px 20px;
+        }
+
+        @include r($lg) {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        @include r($md) {
+            padding: 76px 0 30px 14px;
+        }
+
+        @include r($sm) {
+            padding: 76px 0 25px 14px;
+        }
+
         &:not(:last-child) {
             margin-right: 30px;
+
+            @include r($xl) {
+                margin-right: 15px;
+            }
+
+            @include r($lg) {
+                margin-right: 0;
+            }
+
+            @include r($sm) {
+                margin-bottom: 15px;
+            }
         }
 
         &--sm {
             width: 25%;
+
+            @include r($lg) {
+                width: 49%;
+                margin-bottom: 0;
+            }
+
+            @include r($sm) {
+                width: 100%;
+            }
 
             article {
                 max-width: 200px;
@@ -45,6 +93,10 @@
         font-size: 12px;
         margin-bottom: 18px;
         @include hidden(2);
+
+        @include r($sm) {
+            margin-bottom: 12px;
+        }
     }
     
     &__text {
@@ -54,12 +106,22 @@
         text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.25);
         margin-bottom: 10px;
         @include hidden(3);
+
+        @include r($md) {
+            margin-bottom: 56px;
+        }
+
+        @include r($sm) {
+            font-size: 24px;
+            margin-bottom: 74px;
+        }
     }
     
     &__link {
-        max-width: 200px;
         border-bottom: 2px solid $white;
         transition: color 0.3s, border-color 0.3s;
+        @include maxw(200px);
+
         &:hover {
             color: $green-900;
             border-color: $green-900;

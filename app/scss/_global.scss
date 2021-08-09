@@ -38,11 +38,12 @@ main {
 }
 
 .logo {
-    
+
     &__img  {
         object-fit: cover;
     }
 }
+
 
 .title {
     font-family: $f-signika;
@@ -50,16 +51,16 @@ main {
     font-size: 32px;
     letter-spacing: 0.03rem;
     text-transform: uppercase;
+
+    @include r($md) {
+        font-size: 28px;
+        font-weight: 600;
+    }
+
+    @include r($sm) {
+        font-size: 24px;
+    }
 }
-
-
-
-
-
-
-
-
-
 
 
 

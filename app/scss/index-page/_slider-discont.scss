@@ -1,8 +1,8 @@
 
 .slider-discont {
-    padding-top: 104px;
+    padding-top: 102px;
 
-    &__item {
+    &__box {
         background-repeat: no-repeat;
         background-size: cover;
         background-position: bottom center;
@@ -13,6 +13,19 @@
         min-height: 550px;
         height: 56vh;
         align-items: center;
+
+        @include r($lg) {
+            min-height: 450px;
+        }
+
+        @include r($md) {
+            min-height: 350px;
+        }
+
+        @include r($sm) {
+            min-height: 300px;
+        }
+        
     }
 
     &__content {
@@ -23,7 +36,15 @@
         color: $content;
         margin-bottom: 31px; 
         line-height: 1.3; 
-        position: relative; 
+        position: relative;
+
+        @include r($md) {
+            max-width: 768px;
+            border-radius: 0;
+            margin: 0 -15px 30px -15px;
+
+            padding: 30px 17px 12px;
+            }
     }
 
 
@@ -36,9 +57,41 @@
         text-transform: uppercase;
         text-shadow: 0px 4px 0px $content;
 
+        @include r($xl) {
+            font-size: 48px;
+        }
+
+        @include r($md) {
+            font-size: 36px;
+            text-shadow: none;
+        }
+        
+        @include r($sm) {
+            font-size: 20px;
+        }
+        &:nth-child(2) {
+            @include r($sm) {
+                margin-bottom: 15px;
+            }
+        }
+
         &--red {
             color: $red;
             text-shadow: 0px 4px 0px $red; 
+
+            @include r($xl) {
+                font-size: 48px;
+            }
+
+            @include r($md) {
+                font-size: 36px;
+                text-shadow: none;
+            }
+
+            @include r($sm) {
+                font-size: 20px;
+            }
+
         }
     }
 
@@ -88,5 +141,49 @@
 
     .slick-next {
         right: 60px;
+    }
+
+    .slick-dots  {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 20px;
+
+        @include r($sm) {
+            bottom: 8px;
+        }
+
+        li {
+            
+            &:not(:last-child) {
+                margin-right: 12px;
+            }
+
+            button {
+                border: 1px solid $silver-600;
+                font-size: 0;
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+
+                @include r($sm) {
+                    width: 12px;
+                    height: 12px;
+                }
+
+                &:focus {
+                    outline-color: #E0EDCF;
+                }
+            }
+        }
+
+        li.slick-active {
+            button {
+                border: 1px solid $green-900;
+                background-color: $green-900;
+            }
+        }
     }
 }

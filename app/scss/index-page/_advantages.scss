@@ -2,9 +2,21 @@
     background-color: #F6F6F6;;
     padding: 45px 0;
 
+    @include r($md) {
+        padding: 33px 0;
+    }
+
     &__list {
         display: flex;
         justify-content: center;
+
+        @include r($lg) {
+            flex-wrap: wrap;
+        }
+        
+        @include r($sm) {
+            justify-content: flex-start;
+        }
     }
 
     &__item {
@@ -12,9 +24,17 @@
         padding-left: 70px;
         max-width: 270px;
         width: 100%;
-
+        
         &:not(:last-child) {
             margin-right: 53px;
+
+            @include r($lg) {
+                margin-bottom: 28px;
+            }
+
+            @include r($sm) {
+                margin-right: 0;
+            }
         }
         
         &::after {
