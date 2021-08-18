@@ -24,18 +24,24 @@
         display: flex;
         align-items: center;
 
+        &--right {
+
+            @include r($md) {
+                display: none;
+            }
+
+            li:not(:last-child) {
+                margin-right: 25px;
+            }
+        }
     }
-    
+
     &__item:not(:last-child) {
         margin-right: 40px;
 
         @include r ($lg) {
             margin-right: 29px;
         }
-    }
-
-    &__item-info:not(:last-child) {
-        margin-right: 25px;
     }
 
     &__icon {
@@ -48,14 +54,15 @@
         @include r($sm) {
             margin-right: -3px;
         }
-
     }
 
-    &__list--right {
-
-        @include r($md) {
-            display: none;
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        @include r($lg) {
+            justify-content: flex-start;
         }
+
     }
 
     &__catalog {
@@ -67,22 +74,19 @@
         }
 
         &:hover {
-            .header__catalog-list {
-                display: block;
-            }
-
             .header__catalog-btn {
                 background-color: $green-200;
             }
         }
     }
-   
+
     &__catalog-list {
         display: none;
         position: absolute;
-        top: 46px;
-        left: 0;
+        top: 44px;
         right: 0;
+        left: 0;
+        overflow: hidden;
     }
 
     &__catalog-item {
@@ -118,7 +122,7 @@
         }
 
         &:focus {
-            outline-color: #E0EDCF;
+            outline-color: $green-200;
         }
     }
 
@@ -128,7 +132,7 @@
         color: $white;
         font-size: 13px;
         text-transform: uppercase;
-        transition: color 0.2s linear; 
+        transition: color 0.2s linear;
 
         span {
             @include maxw(200px);
@@ -146,12 +150,12 @@
             color: $silver-600;
 
             .header__icon {
-                fill: $silver-600; 
+                fill: $silver-600;
             }
         }
 
         &:focus {
-            outline-color: #E0EDCF;
+            outline-color: $green-200;
         }
     }
 
@@ -163,7 +167,7 @@
         left: 0;
         line-height: 1;
         background-color: $green-900;
-        padding: 20px 0;
+        padding: 23px 0;
         transition: top 0.2s ease;
 
         @include r($md) {
@@ -174,26 +178,17 @@
         @include r($sm) {
             padding: 11px 0 7px
         }
-        
-    }
 
-    &__bottom--scroll {
-        top: 0;
-        padding: 10px 0;
+        &--scroll {
+            top: 0;
+            padding: 11px 0;
 
-        @include r($md) {
-            top: 47px;
+            @include r($md) {
+                top: 47px;
+            }
         }
     }
 
-    &__wrapper {
-        display: flex;
-        align-items: center;
-
-        @include r($lg) {
-            justify-content: space-between;
-        }
-    }
 
     &__logo {
         margin-right: 24px;
@@ -201,27 +196,17 @@
         width: 100%;
 
         @include r($sm) {
-            display: none;
+            width: 37px;
+            height: 40px;
+            margin-right: 27px;
+        }
+
+        @include r($xsm) {
+            margin-right: 5px;
         }
 
         &:focus {
-            outline-color: #E0EDCF;
-        }
-    }
-
-    &__logo-sm {
-        display: none;
-        max-width: 36px;
-        width: 100%;
-        margin-right: 24px;
-        
-        @include r($sm) {
-            display: block;
-            margin-right: 0;
-        }
-
-        &:focus {
-            outline-color: #E0EDCF;
+            outline-color: $green-200;
         }
     }
 
@@ -232,8 +217,6 @@
         width: 100%;
         position: relative;
         margin-right: 35px;
-
-       
 
         @include r($xl) {
             margin-right: 15px;
@@ -248,16 +231,17 @@
         }
 
         @include r($md) {
-            max-width: 768px;
-            top: 133px;
-            right: 0;
-            left: 0;
+            top: 145px;
+            left: 20px;
         }
+
         @include r($sm) {
+            left: 0;
+            right: 0;
             top: 110px;
         }
 
-        &--show {
+        &--showw {
 
             @include r($lg) {
                 display: flex;
@@ -279,7 +263,7 @@
             transform: translateY(-50%);
             width: 20px;
             height: 20px;
-            background-image: url(../images/icons/search.svg);
+            background-image: url(../images/content/icons/search.svg);
             background-repeat: no-repeat;
         }
     }
@@ -290,12 +274,11 @@
         line-height: 1;
         padding: 17px 10px 15px 50px;
         border-radius: 6px 0 0 6px;
-        
-        @include r ($md) {
-            border-radius: 0;
-        }
+
+
         @include r ($sm) {
             padding: 14px 10px 14px 50px;
+            border-radius: 0;
         }
 
         &::placeholder {
@@ -304,23 +287,29 @@
         }
 
         &:focus {
-            outline-color: #E0EDCF;
+            outline-color: $green-200;
         }
     }
 
     &__user {
-        display: flex
+        display: flex;
+
+        @include r($lg) {
+            margin-left: auto;
+        }
     }
 
     &__user-icon {
+        pointer-events: none;
         fill: $white;
     }
 
 
-    &__user-link {
-
+    &__user-link,
+    &__user-btn {
+        background-color: transparent;
         &:focus {
-            outline-color: #E0EDCF;
+            outline-color: $green-200;
         }
     }
 
@@ -349,10 +338,10 @@
 
         &:hover {
             background-color: rgba(255, 255, 255, 0.1);
-        }  
+        }
 
         &:focus {
-            outline-color: #E0EDCF;
+            outline-color: $green-200;
         }
     }
 
@@ -362,7 +351,6 @@
         @include r($lg) {
             display: flex;
         }
-      
     }
 
     &__user-item--user {
@@ -385,6 +373,10 @@
         @include r($sm) {
             margin-right: 6px;
         }
+
+        @include r($xsm) {
+            margin-right: 0;
+        }
     }
 
     &__num {
@@ -393,7 +385,7 @@
         left: 4px;
         width: 18px;
         height: 18px;
-        background-color: $white; 
+        background-color: $white;
         border-radius: 50%;
         font-size: 10px;
         line-height: 1.9;

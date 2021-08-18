@@ -2,22 +2,18 @@
     background-color: $dark-800;
     color: $white;
     padding-top: 30px;
-    
-    @include r($sm) {
-        padding-top: 24px;
-    }
 
     &__logo {
         display: inline-block;
         margin-bottom: 22px;
 
-        @include r($md) {
+        @include r($lg) {
             display: flex;
             justify-content: center;
         }
 
         &:focus {
-            outline-color: #E0EDCF;
+            outline-color: $green-200;
         }
     }
 
@@ -26,21 +22,22 @@
         padding-bottom: 30px;
         justify-content: space-between;
         position: relative;
-        margin: 0 -15px;
 
         @include r($lg) {
+            padding: 20px 0;
             flex-wrap: wrap;
-        }
-
-        @include r($md) {
-            align-items: center;
-            flex-direction: column-reverse;
+            justify-content: center;
+            margin: 0 -15px;
+            border-top: 1px solid rgba($white, 0.1);
         }
 
         @include r($sm) {
-            padding-bottom: 20px;
+            align-items: center;
+            flex-direction: column-reverse;
+            border-top: none;
+            padding-top: 0;
         }
-     }
+    }
 
     &__title {
         display: block;
@@ -48,9 +45,7 @@
         margin-bottom: 10px;
     }
 
-    &__form {
-        display: flex;
-    }
+
 
     &__subscribe {
         margin-right: 60px;
@@ -59,10 +54,14 @@
             margin-right: 30px;
         }
 
-        @include r($md) {
+        @include r($sm) {
             padding-top: 20px;
-            margin-right: 0;
+            margin: 0 auto;
         }
+    }
+
+    &__form {
+        display: flex;
     }
 
     &__input {
@@ -73,19 +72,26 @@
         padding: 12px;
 
         &::placeholder {
-            font-size: 14px; 
-            color: $dark-800; 
+            font-size: 14px;
+            color: $dark-800;
         }
 
         &:focus {
-            outline-color: #E0EDCF;
+            outline-color: $green-200;
         }
     }
 
     &__box {
-        @include r($md) {
+
+        @include r($lg) {
             width: 100%;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            order: 2;
+            border-top: 1px solid rgba($white, 0.1);
+        }
+
+        @include r($sm) {
+            order: 0;
+            border-bottom: 1px solid rgba($white, 0.1);
         }
     }
 
@@ -98,20 +104,35 @@
             column-gap: 20px;
         }
 
-        @include r($md) {
-            max-width: 350px;
+        @include r($lg) {
             margin: 0 auto;
-            padding: 20px 0 20px;
+            padding: 20px 0 20px 60px;
         }
 
         @include r($sm) {
-            column-count: 2;
-            padding: 20px 0 5px 50px;
+            max-width: 300px;
+            display: flex;
+            justify-content: center;
+            padding-left: 30px;
+            padding-bottom: 0;
+            flex-wrap: wrap;
         }
     }
 
     &__item {
         margin-bottom: 15px;
+
+        &:nth-child(odd) {
+            margin-right: 0;
+            
+            @include r($sm) {
+                margin-right: 30px; 
+            }
+        }
+
+        @include r($sm) {
+            width: 40%;
+        }
     }
 
     &__link {
@@ -122,24 +143,21 @@
         transition: color 0.2s linear;
         border-bottom: 3px solid transparent;
         @include maxw(150px);
-              
-        &:hover { 
+
+        &:hover {
             color: $silver-600;
         }
 
         &:focus {
-            border-bottom: 3px solid rgb($green-900, 50%);
+            border-color: rgba($green-900, 50%);
             outline: 0;
         }
     }
 
     &__contact {
-       
-        @include r($md) {
-            width: 100%;
-            text-align: center;
-            padding-bottom: 20px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+        @include r($lg) {
+            padding-bottom: 24px;
         }
     }
 
@@ -147,6 +165,7 @@
         font-style: normal;
         margin-bottom: 12px;
         font-weight: 400;
+        @include hidden(2);
 
         span {
             margin-right: 12px;
@@ -159,41 +178,25 @@
 
         a {
             border-bottom: 3px solid transparent;
+            max-width: 220px;
+            margin: 0 auto;
 
             &:hover {
                 color: $silver-600;
             }
 
             &:focus {
-                border-bottom: 3px solid rgb($green-900, 50%);
+                border-color: rgba($green-900, 50%);
                 outline: 0;
             }
         }
     }
 
-    &__info-link {
-        border-bottom: 3px solid transparent;
-        max-width: 220px;
-        @include hidden(2);
-
-        &:hover {
-            color: $silver-600;
-        }
-
-        &:focus {
-            border-bottom: 3px solid rgb($green-900, 50%);
-            outline: 0;
-        }
-    }
 
     &__social {
         display: flex;
         align-items: center;
         padding-left: 10px;
-
-        @include r($md) {
-            justify-content: center;
-        }
     }
 
     &__social-item {
@@ -201,16 +204,16 @@
         &:not(:last-child) {
             margin-right: 16px;
         }
-        
+
         &:focus {
-            outline-color: #E0EDCF;
-        }  
+            outline-color: $green-200;
+        }
     }
 
     &__social-link {
 
         &:focus {
-            outline-color: #E0EDCF;
+            outline-color: $green-200;
         }
     }
 
@@ -219,17 +222,13 @@
         transition: fill 0.3s linear;
 
         &:hover {
-            fill: $silver-600; 
+            fill: $silver-600;
         }
     }
 
     &__bottom {
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-top: 1px solid rgba($white, 0.1);
         padding: 17px 0;
-
-        @include r($sm) {
-            padding: 28px 0 20px;
-        }
     }
 
     &__wrapper {
@@ -243,20 +242,20 @@
     }
 
     &__copy {
-        text-transform: uppercase; 
+        text-transform: uppercase;
     }
 
     &__accept {
         display: flex;
+
+        @include r($sm) {
+            margin-bottom: 10px;
+        }
     }
 
     &__accept-item {
         &:first-child {
             margin-right: 20px;
-
-            @include r($sm) {
-                margin-bottom: 20px;
-            }
         }
     }
 

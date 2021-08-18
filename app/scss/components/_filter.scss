@@ -39,18 +39,18 @@
         line-height: 1.3;
         border-bottom: 3px solid transparent;
         padding: 0;
-        transition: border-bottom 0.3s linear;
+        transition: border-color 0.3s linear;
 
         &:hover {
-            border-bottom: 3px solid rgb($green-900, 20%);
+            border-color: rgba($green-900, 20%);
         }
 
         &:focus {
-            outline-color: #E0EDCF;
+            outline-color: $green-200;
         }
     }
 
     .mixitup-control-active {
-        border-bottom: 3px solid rgb($green-900, 20%);
+        border-color:  rgba($green-900, 20%);
     }
 }

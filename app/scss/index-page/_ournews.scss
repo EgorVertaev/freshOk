@@ -1,15 +1,6 @@
 .ournews {
     background-color: $white;
-    padding: 64px 0 72px;
-
-    @include r($md) {
-        padding: 40px 0 45px;
-    }
-
-    @include r($sm) {
-        padding: 18px 0 30px;
-    }
-
+    padding-top: 0;
     &__top {
         display: flex;
         justify-content: space-between;
@@ -54,15 +45,15 @@
         }
 
         &:hover {
-            color: #4D800C;
+            color: $green-1000;
 
             &::after {
-                background-color:#4D800C;
+                background-color: $green-1000;
             }
         }
 
         &:focus {
-            outline-color: #E0EDCF;
+            outline-color: $green-200;
         }
     }
 
@@ -79,28 +70,32 @@
 
     &__item {
         max-width: 410px;
-        width: 33.33333%;
+        width: calc(100% / 3);
         margin: 0 15px;
         position: relative; 
         border-radius: 6px;
         overflow: hidden;
-        box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+        box-shadow: 0px 3px 3px rgba($black, 0.25);
 
         &:not(:last-child) {
 
             @include r($lg) {
                 margin-bottom: 15px;
+            }
+        }
 
+        &:nth-child(3) {
+            @include r($lg) {
+                width: 100%;
             }
         }
 
         @include r($lg) {       
-            width: 50%;
+            width: 45%;
         }
 
         @include r($md) {
             width: 100%;
         }
     }
-
 }

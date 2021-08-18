@@ -1,15 +1,15 @@
 .top-product {
-    background-color: #ffffff;;
-    padding-top: 75px;
+    background-color: $white;
+    padding: 72px 0 4px;
 
-    @include r($md) { 
+    @include r($md) {
         padding-top: 60px;
     }
 
-    @include r($sm) { 
+    @include r($sm) {
         padding-top: 46px;
     }
-    
+
     &__title {
         margin-bottom: 33px;
         text-align: center;
@@ -37,17 +37,25 @@
         }
 
         @include r($md) {
-            justify-items: center;
             grid-template-columns: 50% 50%;
             grid-gap: 10px;
             margin-bottom: 35px;
         }
 
         @include r($sm) {
-            
             grid-gap: 5px;
-            grid-auto-rows: 310px;
             margin-bottom: 25px;
+            grid-auto-rows: auto;
+        }
+    }
+
+    &__item {
+
+        &:nth-child(odd) {
+
+            @include r($md) {
+                justify-self: end;
+            }
         }
     }
 

@@ -23,7 +23,7 @@
         }
 
         @include r($sm) {
-            min-height: 300px;
+            min-height: 320px;
         }
         
     }
@@ -47,9 +47,8 @@
             }
     }
 
-
     &__text {
-        font-family: $f-signika;
+        font-family: $f-open-sans;
         font-weight: 700;
         color: $content;
         font-size: 60px; 
@@ -124,15 +123,13 @@
         }
 
         &:focus {
-            box-shadow: 0px 0px 0px 4px #B1D286;
+            box-shadow: 0px 0px 0px 4px $green-400;
             outline: 0;
         }
 
         &:active {
-            box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+            box-shadow: inset 0px 4px 4px rgba($black, 0.25);
         }
-
-        
     }
 
     .slick-prev {
@@ -174,14 +171,14 @@
                 }
 
                 &:focus {
-                    outline-color: #E0EDCF;
+                    outline-color: $green-200;
                 }
             }
         }
 
         li.slick-active {
             button {
-                border: 1px solid $green-900;
+                border-color: $green-900;
                 background-color: $green-900;
             }
         }

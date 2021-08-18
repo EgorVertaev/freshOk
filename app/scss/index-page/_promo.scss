@@ -1,14 +1,5 @@
 .promo {
-    background-color: #ffffff;
-    padding: 64px 0 75px;
-
-    @include r($md) {
-        padding: 55px 0 60px;
-    }
-
-    @include r($sm) {
-        padding: 45px 0 50px;
-    }
+    background-color: $silver-100;
 
     &__title {
         margin-bottom: 32px;
@@ -24,20 +15,21 @@
         grid-template-columns: repeat(4, 1fr);
         grid-auto-rows: 125px;
         grid-gap: 30px;
-        margin-bottom: 41px;
+        margin-bottom: 45px;
 
         @include r($xl) {
+            justify-items: stretch;
             grid-template-columns: repeat(3, 1fr);
             grid-gap: 25px;
         }
 
         @include r($lg) {
+            grid-template-columns: repeat(2, 1fr);
             grid-gap: 20px;
             margin-bottom: 35px;
         }
 
         @include r($md) {
-    
             grid-template-columns: 50% 50%;
             grid-gap: 10px;
             margin-bottom: 35px;
@@ -54,6 +46,22 @@
     }
 
     &__item {
+
+        @include r($xl) {
+            justify-self: center;
+        }
+
+        @include r($lg) {
+            justify-self: start;
+        }
+
+        &:nth-child(odd) {
+
+            @include r($lg) {
+                justify-self: end;
+            }
+        }
+
         &:not(:last-child) {
            
             @include r($sm) {

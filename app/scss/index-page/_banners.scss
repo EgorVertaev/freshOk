@@ -1,16 +1,10 @@
 .banners {
-    padding: 75px 0;
-    background-color: #ffffff;
-    
-    @include r($sm) {
-        padding: 50px 0;
-    }
-
+    background-color: $white;
 
     &__list {
         display: flex;
 
-        @include r($lg) {
+        @include r($md) {
             justify-content: space-between;
             flex-wrap: wrap;
         }
@@ -29,12 +23,13 @@
         }
 
         @include r($lg) {
-            width: 100%;
-            margin-bottom: 15px;
+            width: 33%;
         }
 
         @include r($md) {
+            width: 100%;
             padding: 76px 0 30px 14px;
+            margin-bottom: 15px;
         }
 
         @include r($sm) {
@@ -48,22 +43,28 @@
                 margin-right: 15px;
             }
 
-            @include r($lg) {
+            @include r($md) {
                 margin-right: 0;
             }
 
             @include r($sm) {
                 margin-bottom: 15px;
             }
+
         }
 
         &--sm {
             width: 25%;
 
-            @include r($lg) {
-                width: 49%;
+            @include r($xl) {
+                width: 33%;
                 margin-bottom: 0;
             }
+
+            @include r($md) {
+                width: calc((100% - 15px) / 2);
+            }
+
 
             @include r($sm) {
                 width: 100%;
@@ -77,59 +78,6 @@
             a {
                 border-color: $content;
             }
-        }
-        
-    }
-    
-    &__inner {
-        text-transform: uppercase;
-        color: $white;
-        max-width: 400px;
-
-    }
-    
-    &__tilte {
-        font-weight: 700;
-        font-size: 12px;
-        margin-bottom: 18px;
-        @include hidden(2);
-
-        @include r($sm) {
-            margin-bottom: 12px;
-        }
-    }
-    
-    &__text {
-        font-weight: 700;
-        font-size: 30px;
-        line-height: 1.4;
-        text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.25);
-        margin-bottom: 10px;
-        @include hidden(3);
-
-        @include r($md) {
-            margin-bottom: 56px;
-        }
-
-        @include r($sm) {
-            font-size: 24px;
-            margin-bottom: 74px;
-        }
-    }
-    
-    &__link {
-        border-bottom: 2px solid $white;
-        transition: color 0.3s, border-color 0.3s;
-        @include maxw(200px);
-
-        &:hover {
-            color: $green-900;
-            border-color: $green-900;
-        }
-        
-        &:focus {
-            outline-color: #E0EDCF;
-        }
-        
-    }
+        } 
+    } 
 }

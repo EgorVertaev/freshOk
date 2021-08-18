@@ -3,7 +3,7 @@
     padding: 14px 24px;
     font-family: $f-lato;
     font-weight: 400;
-    color: $green-900; 
+    color: $green-900;
     font-size: 18px;
     letter-spacing: 0.03rem;
     border-radius: 6px;
@@ -11,29 +11,29 @@
     width: fit-content;
     @include maxw(300px);
     transition: background-color 0.3s ease, fill 0.2s, border-color 0.3s, color 0.2s;
-    
+
     &:focus {
         outline: 0;
     }
 
     &--transparent {
         display: block;
-        border: 1px solid #B1D286;
+        border: 1px solid $green-400;
         margin: 0 auto;
-        
+
         &:hover {
             background-color: $green-100;
-            border-color:$green-900 ;
+            border-color: $green-900;
         }
 
         &:focus {
-            box-shadow: 0px 0px 0px 4px #B1D286;
+            box-shadow: 0px 0px 0px 4px $green-400;
         }
 
         &:active {
-            color: rgb($green-900, 50%);
-            box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-        }   
+            color: rgba($green-900, 50%);
+            box-shadow: inset 0px 4px 4px rgba($black, 0.25);
+        }
     }
 
     &--catalog {
@@ -44,9 +44,10 @@
         padding: 17px 45px 18px 60px;
         position: relative;
 
-       @include r($sm) {
-           padding: 13px 40px 13px 60px;
-       }
+        @include r($md) {
+            padding: 15px 46px 15px 58px;
+        }
+
         span {
             @include r($xl) {
                 display: none;
@@ -60,6 +61,7 @@
                 display: none;
             }
         }
+
         &::before {
             content: "";
             position: absolute;
@@ -67,8 +69,13 @@
             bottom: 15px;
             width: 27px;
             height: 17px;
-            background-image: url(../images/icons/nav.svg);
+            background-image: url(../images/content/icons/nav.svg);
             background-repeat: no-repeat;
+
+            @include r($md) {
+                bottom: 13px;
+                left: 13px;
+            }
         }
 
         &::after {
@@ -78,25 +85,30 @@
             bottom: 22px;
             width: 8px;
             height: 4px;
-            background-image: url(../images/icons/chevron-nav.svg);
+            background-image: url(../images/content/icons/chevron-nav.svg);
             transition: transform 0.2s linear;
+            
+            @include r($md) {
+                bottom: 19px;
+                right: 10px;
+            }
         }
 
         &:hover {
             background-color: $green-200;
-            
+
             &::after {
                 transform: rotate(180deg);
             }
         }
-    
+
         &:active {
-            color: rgb($green-900, 50%);
-            box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+            color: rgba($green-900, 50%);
+            box-shadow: inset 0px 4px 4px rgba($black, 0.25);
         }
 
         &:focus {
-            box-shadow: 0px 0px 0px 4px #E0EDCF;
+            box-shadow: 0px 0px 0px 4px $green-200;
         }
     }
 
@@ -112,27 +124,25 @@
         @include maxw(200px);
 
         @include r($xl) {
-            padding: 16px 40px;
+            padding: 17px 40px;
         }
 
-        @include r ($md) {
-            border-radius: 0;
-        }
         @include r ($sm) {
+            border-radius: 0;
             padding: 16px 26px 15px;
         }
 
         &:hover {
-            background-color: rgb($dark-800, 85%);
+            background-color: rgba($dark-800, 85%);
         }
-        
+
         &:focus {
-            box-shadow: 0px 0px 0px 4px #E0EDCF;
+            box-shadow: 0px 0px 0px 4px $green-200;
         }
 
         &:active {
             background-color: $dark-800;
-            box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+            box-shadow: inset 0px 4px 4px rgba($black, 0.25);
             color: $silver-600;
         }
     }
@@ -148,16 +158,16 @@
         transition: background-color 0.3s linear, color 0.2s linear;
 
         &:hover {
-            background-color: #4D810C;
+            background-color: $green-1000;
         }
 
         &:active {
-            color: rgb($white, 50%);
-            box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+            color: rgba($white, 50%);
+            box-shadow: inset 0px 4px 4px rgba($black, 0.25);
         }
 
         &:focus {
-            box-shadow: 0px 0px 0px 4px #E0EDCF;
+            box-shadow: 0px 0px 0px 4px $green-200;
         }
     }
 
@@ -173,25 +183,49 @@
         }
 
         &:hover {
-            background-color: #4D810C;
+            background-color: $green-1000;
         }
-        
+
         &:focus {
-            box-shadow: 0px 0px 0px 4px #E0EDCF;
+            box-shadow: 0px 0px 0px 4px $green-200;
         }
 
         &:active {
-            color: rgb($white, 50%);
-            box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+            color: rgba($white, 50%);
+            box-shadow: inset 0px 4px 4px rgba($black, 0.25);
         }
 
-        &-promo {
-            display: block;
-            margin: 0 auto;
+
+    }
+
+    &--promo {
+        display: block;
+        margin: 0 auto;
+        background-color: $green-900;
+        border-radius: 6px;
+        color: $white;
+        font-size: 18px;
+        letter-spacing: 0.05rem;
+
+        @include r($sm) {
+            padding: 12px 22px;
+        }
+
+        &:hover {
+            background-color: $green-1000;
+        }
+
+        &:focus {
+            box-shadow: 0px 0px 0px 4px $green-200;
+        }
+
+        &:active {
+            color: rgba($white, 50%);
+            box-shadow: inset 0px 4px 4px rgba($black, 0.25);
         }
     }
 
-    &--favorit {
+    &--favourite {
         padding: 0;
         font-size: 0;
         fill: $silver-600;
@@ -208,22 +242,22 @@
         border-radius: 3px;
         fill: $white;
         line-height: 1;
-        
-        &:hover { 
-            background-color: #4D810C;
+
+        &:hover {
+            background-color: $green-1000;
         }
 
         &:focus {
-            box-shadow: 0px 0px 0px 4px #E0EDCF;
+            box-shadow: 0px 0px 0px 4px $green-200;
         }
 
         &:active {
-            fill: rgb($white, 50%);
-            box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+            fill: rgba($white, 50%);
+            box-shadow: inset 0px 4px 4px rgba($black, 0.25);
         }
     }
 
-    &--green-large {
+    &--green-lg {
         max-width: 470px;
         width: 100%;
         background-color: $green-900;
@@ -231,22 +265,23 @@
         border-radius: 0;
         line-height: 1;
         padding: 22px 20px;
+        text-align: center;
 
         @include r ($sm) {
             padding: 15px 20px;
         }
 
         &:hover {
-            background-color: #4D810C;
+            background-color: $green-1000;
         }
 
         &:focus {
-            box-shadow: 0px 0px 0px 4px #E0EDCF;
+            box-shadow: 0px 0px 0px 4px $green-200;
         }
 
         &:active {
-            color: rgb($white, 50%);
-            box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+            color: rgba($white, 50%);
+            box-shadow: inset 0px 4px 4px rgba($black, 0.25);
         }
     }
 }
@@ -269,7 +304,7 @@
     }
 
     &:focus {
-        outline-color: #E0EDCF ;
+        outline-color: $green-200;
     }
 }
 
@@ -292,9 +327,8 @@
     }
 
     &:focus {
-        outline-color: #E0EDCF;
+        outline-color: $green-200;
     }
-
 }
 
 .burger-menu {
@@ -303,6 +337,8 @@
     margin-right: 40px;
     width: 44px;
     height: 44px;
+    background-repeat: no-repeat;
+    background-position: center;
     transition: background-color 0.2s linear;
 
     &:hover {

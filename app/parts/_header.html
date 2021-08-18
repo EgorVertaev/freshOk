@@ -1,0 +1,321 @@
+<header class="header">
+    <nav class="header__nav">
+        <div class="header__top">
+            <div class="container">
+                <div class="header__inner">
+                    <button class="burger-menu" type="button" style="background-image: url(images/icons/burger.svg);">
+                        <span class="visually-hidden">бургер меню</span>
+                    </button>
+                    <ul class="header__list">
+                        <li class="header__item">
+                            <a class="header__link" href="#" >
+                                <svg class="header__icon">
+                                    <use xlink:href="images/sprite.svg#del-address"></use>
+                                </svg>
+                                <span>адрес и время доставки</span>
+                            </a>
+                        </li>
+                        <li class="header__item">
+                            <a class="header__link" href="#" >
+                                <svg class="header__icon">
+                                    <use xlink:href="images/sprite.svg#tel"></use>
+                                </svg>
+                                <span>горячая линия 24/7</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="header__list header__list--right">
+                        <li class="header__item">
+                            <a class="header__link" href="#">доставка</a>
+                        </li>
+                        <li class="header__item">
+                            <a class="header__link" href="#">о нас</a>
+                        </li>
+                        <li class="header__item">
+                            <a class="header__link" href="#">новости</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="header__bottom">
+            <div class="container">
+                <div class="header__wrapper">
+                    <a class="logo header__logo" href="#">
+                        <picture>
+                            <source srcset="images/content/logo-icon.svg" media="(max-width: 576px)">
+                            <img class="logo__img" src="images/content/logo.svg" alt="Логотип">
+                        </picture>
+                    </a>
+                    <div class="header__catalog">
+                        <a class="header__catalog-btn btn btn--catalog" href="#">
+                            Каталог <span>продуктов</span>
+                        </a>
+                        <ul class="header__catalog-list">
+                            <li class="header__catalog-item">
+                                <a class="header__catalog-link" href="#">Овощи и фрукты</a>
+                            </li>
+                            <li class="header__catalog-item">
+                                <a class="header__catalog-link" href="#">Бакалея</a>
+                            </li>
+                            <li class="header__catalog-item">
+                                <a class="header__catalog-link" href="#">Молочные продукты</a>
+                            </li>
+                            <li class="header__catalog-item">
+                                <a class="header__catalog-link" href="#">Хлеб</a>
+                            </li>
+                            <li class="header__catalog-item">
+                                <a class="header__catalog-link" href="#">Мясо</a>
+                            </li>
+                            <li class="header__catalog-item">
+                                <a class="header__catalog-link" href="#">Рыба</a>
+                            </li>
+                            <li class="header__catalog-item">
+                                <a class="header__catalog-link" href="#">Алкоголь</a>
+                            </li>
+                            <li class="header__catalog-item">
+                                <a class="header__catalog-link" href="#">Напитки</a>
+                            </li>
+                            <li class="header__catalog-item">
+                                <a class="header__catalog-link" href="#">Торты</a>
+                            </li>
+                            <li class="header__catalog-item">
+                                <a class="header__catalog-link" href="#">Мясо</a>
+                            </li>
+                            <li class="header__catalog-item">
+                                <a class="header__catalog-link" href="#">Чай, кофе</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <form class="header__search">
+
+                        <label class="header__input-label" for="#search">
+                            <span class="visually-hidden">Поиск</span>
+                        </label>
+                        <input class="header__input" id="search"  type="search" required placeholder="Найти в магазине ..."  name="search">
+                        <button class="header__btn-search btn btn--dark" type="submit">Поиск</button>
+                    </form>
+                    <div class="header__user">
+                        <div class="header__user-item header__user-item--search">
+                            <button class="header__user-link header__user-link--search" href="#">
+                                <span class="visually-hidden">Поиск</span>
+                                <svg class="header__user-icon js-search"  width="30" height="30">
+                                    <use xlink:href="images/sprite.svg#search"></use>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="header__user-item header__user-item--user">
+                            <a class="header__user-link" href="#">
+                                <span class="visually-hidden">Пользователь</span>
+                                <svg class="header__user-icon"  width="25" height="32">
+                                    <use xlink:href="images/sprite.svg#user"></use>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="header__user-item header__user-item--favorit">
+                            <a class="header__user-link" href="#">
+                                <span class="visually-hidden">Избранное</span>
+                                <svg class="header__user-icon"  width="32" height="29">
+                                    <use xlink:href="images/sprite.svg#favorite"></use>
+                                </svg>
+                                <span class="header__num">12</span>
+                            </a>
+                        </div>
+                        <div class="header__user-item">
+                            <button class="header__user-link header__user-link--card" href="#">
+                                <span class="visually-hidden">Корзина</span>
+                                <svg class="header__user-icon js-card"  width="32" height="31">
+                                    <use xlink:href="images/sprite.svg#cart"></use>
+                                </svg>
+                                <span class="header__num">12</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="menu-mob">
+            <div class="menu-mob__header">
+                <a class="logo menu-mob__logo" href="#">
+                    <img class="logo__img" src="images/logo-green.svg" alt="Логотип" width="200" height="60">
+                </a>
+                <button class="btn-close menu-mob__btn" type="button">
+                    <span class="visually-hidden">закрыть</span>
+                    <svg class="btn-close__icon" width="18" height="18">
+                        <use xlink:href="#close"></use>
+                    </svg>
+                </button>
+            </div>
+            <a class="menu-mob__register-link" href="#">
+                <span class="visually-hidden">Пользователь</span>
+                <svg class="menu-mob__icon"  width="25" height="32">
+                    <use xlink:href="#user"></use>
+                </svg>
+                <span>Вход <span>|</span> Регистрация</span>
+            </a>
+            <a href="#" class="menu-mob__catalog-link" href="#">
+                Каталог товаров
+            </a>
+            <address class="menu-mob__contact">
+                <a class="menu-mob__contact-link" href="tel:+7907288365">+7 907 288 365</a>
+                <a class="menu-mob__contact-link menu-mob__contact-link--address" href="#">Санкт-Петербург, ул. Ленина, 1</a>
+                <ul class="menu-mob__social">
+                    <li class="menu-mob__social-item">
+                        <a class="menu-mob__social-link" href="#">
+                            <span class="visually-hidden">страница фейсбук</span>
+                            <svg class="menu-mob__icon" width="17" height="32">
+                                <use xlink:href="#facebook"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="menu-mob__social-item">
+                        <a class="menu-mob__social-link" href="#">
+                            <span class="visually-hidden">Ютуб канал</span>
+                            <svg class="menu-mob__icon" width="32" height="24">
+                                <use xlink:href="#youtube"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="menu-mob__social-item">
+                        <a class="menu-mob__social-link" href="#">
+                            <span class="visually-hidden">телеграм канал</span>
+                            <svg class="menu-mob__icon"  width="32" height="28">
+                                <use xlink:href="#telegram"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="menu-mob__social-item">
+                        <a class="menu-mob__social-link" href="#">
+                            <span class="visually-hidden">инстаграм страница</span>
+                            <svg class="menu-mob__icon" width="32" height="32">
+                                <use xlink:href="#instagram"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </address>
+            <ul class="menu-mob__list">
+                <li class="menu-mob__item">
+                    <a class="menu-mob__link" href="#">Доставка</a>
+                </li>
+                <li class="menu-mob__item">
+                    <a class="menu-mob__link" href="#">О нас</a>
+                </li>
+                <li class="menu-mob__item">
+                    <a class="menu-mob__link" href="#">Новости</a>
+                </li>
+                <li class="menu-mob__item">
+                    <a class="menu-mob__link" href="#">Контакты</a>
+                </li>
+                <li class="menu-mob__item">
+                    <a class="menu-mob__link" href="#">Акции</a>
+                </li>
+                <li class="menu-mob__item">
+                    <a class="menu-mob__link" href="#">Вакансии</a>
+                </li>
+                <li class="menu-mob__item">
+                    <a class="menu-mob__link" href="#">Отзывы</a>
+                </li>
+                <li class="menu-mob__item">
+                    <a class="menu-mob__link" href="#">Публичная оферта</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="basket">
+            <div class="basket__top">
+                <div class="basket__inner">
+                    <h2 class="basket__title">Корзина</h2>
+                    <button class="basket__clean" type="button">Очистить корзину</button>
+                </div>
+                <button class="btn-close" type="button">
+                    <span class="visually-hidden">закрыть</span>
+                    <svg class="btn-close__icon" width="18" height="18">
+                        <use xlink:href="#close"></use>
+                    </svg>
+                </button>
+            </div>
+            <div class="basket__main">
+                <ul class="basket__list">
+                    <li class="basket__item">
+                        <article class="basket-card">
+                            <div class="basket-card__product">
+                                <img class="basket-card__img" src="images/basket/pineapple.jpg" alt="Ананас"  width="65px" height="65px">
+                                <div class="basket-card__content">
+                                    <h3 class="basket-card__subtitle">
+                                          Ананас, 1кг
+                                    </h3>
+                                    <span class="basket-card__price">
+                                        999<span>₽</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="basket-card__counter">
+                                <button class="btn-close btn-close--sm" type="button">
+                                    <span class="visually-hidden">закрыть</span>
+                                    <svg class="btn-close__icon" width="12" height="12">
+                                        <use xlink:href="#close"></use>
+                                    </svg>
+                                </button>
+                                <div class="basket-card__box">
+                                    <div class="basket-card__filter">
+                                        <button class="basket-card__btn basket-card__btn--minus" type="button">
+                                            <img class="basket-card__btn-icon" src="images/icons/minus.svg" alt="минус" width="16px" height="16px">
+                                        </button>
+                                        <label class="visually-hidden" for="num">количество товара</label>
+                                        <input class="basket-card__num" id="num" type="text" readonly value="1" >
+                                        <button class="basket-card__btn basket-card__btn--plus" type="button">
+                                            <img class="basket-card__btn-icon" src="images/icons/plus.svg" alt="минус" width="16px" height="16px">
+                                        </button>
+                                    </div>
+                                    <span class="basket-card__totalsum">2038<span>₽</span></span>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="basket__item">
+                        <article class="basket-card">
+                            <div class="basket-card__product">
+                                <img class="basket-card__img" src="images/basket/dragonfruit.jpg" alt="Питахайя"  width="65px" height="65px">
+                                <div class="basket-card__content">
+                                    <h3 class="basket-card__subtitle">
+                                        Питахайя красная с белой мякотью, 1шт
+                                    </h3>
+                                    <span class="basket-card__price">
+                                        999<span>₽</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="basket-card__counter">
+                                <button class="btn-close btn-close--sm" type="button">
+                                    <span class="visually-hidden">закрыть</span>
+                                    <svg class="btn-close__icon" width="12" height="12">
+                                        <use xlink:href="#close"></use>
+                                    </svg>
+                                </button>
+                                <div class="basket-card__box">
+                                    <div class="basket-card__filter">
+                                        <button class="basket-card__btn basket-card__btn--minus" type="button">
+                                            <span class="visually-hidden">добавить позицию</span>
+                                            <img class="basket-card__btn-icon" src="images/icons/minus.svg" alt="минус" width="16px" height="16px">
+                                        </button>
+                                        <input class="basket-card__num" type="text" readonly value="1" >
+                                        <button class="basket-card__btn basket-card__btn--plus" type="button">
+                                            <span class="visually-hidden">убрать позицию</span>
+                                            <img class="basket-card__btn-icon" src="images/icons/plus.svg" alt="минус" width="16px" height="16px">
+                                        </button>
+                                    </div>
+                                    <span class="basket-card__totalsum">2038<span>₽</span></span>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                </ul>
+            </div>
+            <div class="basket__wrapper">
+                <span class="basket__total">Товаров на сумму</span>
+                <span class="basket__sum">2038<span>₽</span></span>
+            </div>
+            <a class="btn btn--green-lg" href="#">Оформить заказ</a>
+        </div>
+    </nav>
+</header>
