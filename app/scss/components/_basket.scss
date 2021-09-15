@@ -10,9 +10,14 @@
     display: flex;
     flex-direction: column;
     transition: right 0.3s linear;
-    
+
+    @include r($sm) {
+        max-width: 576px;
+        top: 111px;
+        height: calc(100vh - 111px);
+    }
+
     &--show {
-        
         right: 0;
     }
 

@@ -1,39 +1,20 @@
-<!DOCTYPE html>
-<html lang="ru">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.min.css">  
-    <link rel="apple-touch-icon" sizes="180x180" href="images/content/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/content/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/content/favicon/favicon-16x16.png">
-    <link rel="manifest" href="images/content/favicon/site.webmanifest">
-    <link rel="mask-icon" href="images/content/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#ffc40d">
-    <meta name="theme-color" content="#ffffff">
-    <title>Фрешок</title> 
-</head>  
-<body> 
-    <div class="wrapper">    
-    </div>
-        @@include('./parts/_header.html')
-           
-        <main>
-            <h1 class="visually-hidden">
-                Фрешок - интернет магазин с большим вибором товаров и доступными ценами
-            </h1>
-            @@include('./parts/_slider-discont.html')
-            @@include('./parts/_advantages.html')
-            @@include('./parts/_top-product.html')
-            @@include('./parts/_banners.html')
-            @@include('./parts/_promo.html')
-            @@include('./parts/_brands.html')
-            @@include('./parts/_ournews.html')            
-        </main>
+@@include('./parts/components/_page-top.html', {
+    "title": "FreshOk | Главная страница"
+})
+@@include('./parts/components/_header.html')
+<main>
+    <h1 class="visually-hidden">
+        Фрешок - интернет магазин с большим вибором товаров и доступными ценами
+    </h1>
+    @@include('./parts/index-page/_slider-discont.html')
+    @@include('./parts/components/_advantages.html')
+    @@include('./parts/index-page/_top-product.html')
+    @@include('./parts/index-page/_banners.html')
+    @@include('./parts/index-page/_promo.html')
+    @@include('./parts/index-page/_brands.html')
+    @@include('./parts/index-page/_ournews.html')            
+</main>
 
-        @@include('./parts/_footer.html')
-
-    <script src="js/main.min.js"></script>
-</body>
-</html>
+@@include('./parts/components/_footer.html')
+@@include('./parts/components/_page-bottom.html')

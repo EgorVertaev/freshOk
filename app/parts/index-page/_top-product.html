@@ -1,0 +1,142 @@
+<section class="section top-product">
+    <div class="container">
+        <h2 class="title top-product__title">
+            топовые товары
+        </h2>
+        <ul class="products-filters">
+            <li class="products-filters__item">
+                <button class="products-filters__button" type="button" data-filter="all">все товары</button>
+            </li>
+            <li class="products-filters__item">
+                <button class="products-filters__button" type="button" data-filter=".fruts">фрукты</button>
+            </li>
+            <li class="products-filters__item">
+                <button class="products-filters__button" type="button" data-filter=".vegetables">овощи</button>
+            </li>
+            <li class="products-filters__item">
+                <button class="products-filters__button" type="button" data-filter=".drinks">напитки</button>
+            </li>
+            <li class="products-filters__item">
+                <button class="products-filters__button" type="button" data-filter=".grocery">бакалея</button>
+            </li>
+        </ul>
+        <ul class="top-product__list">
+            <li class="top-product__item mix fruts">
+               @@include('../components/_product-card.html', {
+                   "subtitle": "Ананас, 1кг",
+                   "newprice": "999",
+                   "imgsrc": "images/content/product-card/pineapple.jpg",
+                   "sale": "50",
+                   "badgenew": true,
+                   "badgesale": true,
+                   "badgehit": false,
+                   "oldcost": true,
+                   "oldprice": "1999",
+                   "statusrate": false,
+               })
+            </li>
+            <li class="top-product__item mix fruts">
+                @@include('../components/_product-card.html', {
+                    "subtitle": "Лимон, 1кг",
+                    "newprice": "199",
+                    "imgsrc": "images/content/product-card/lemon.jpg",
+                    "sale": "50",
+                    "badgenew": false,
+                    "badgesale": false,
+                    "badgehit": false,
+                    "oldcost": false,
+                    "oldprice": "1999",
+                    "statusrate": false,
+                })
+            </li>
+            <li class="top-product__item mix fruts">
+                @@include('../components/_product-card.html', {
+                    "subtitle": "Питахайя красная с белой мякотью, 1шт",
+                    "newprice": "1019",
+                    "oldcost": false,
+                    "oldprice": "1999",
+                    "imgsrc": "images/content/product-card/dragonfruit.jpg",
+                    "sale": "50",
+                    "badgenew": false,
+                    "badgesale": false,
+                    "badgehit": true,
+                    "statusrate": false,
+                })
+            </li>
+            <li class="top-product__item mix vegetables">
+                @@include('../components/_product-card.html', {
+                    "subtitle": "Перец оранжевый, 1кг",
+                    "newprice": "349",
+                    "oldcost": false,
+                    "oldprice": "1999",
+                    "imgsrc": "images/content/product-card/paprik.jpg",
+                    "sale": "50",
+                    "badgenew": true,
+                    "badgesale": false,
+                    "badgehit": false,
+                    "statusrate": false,
+                })
+
+            </li>
+            <li class="top-product__item mix vegetables">
+                @@include('../components/_product-card.html', {
+                    "subtitle": "Морковь молодая с бабушкиной грядки, 1кг",
+                    "newprice": "49",
+                    "oldcost": false,
+                    "oldprice": "1999",
+                    "imgsrc": "images/content/product-card/carrot.jpg",
+                    "sale": "50",
+                    "badgenew": false,
+                    "badgesale": false,
+                    "badgehit": true,
+                    "statusrate": false,
+                })
+            </li>
+            <li class="top-product__item mix drinks">
+                @@include('../components/_product-card.html', {
+                    "subtitle": "Напиток сокосодержащий Sanpellegrino Aranciata Orange Красный апельсин безалкогольный...",
+                    "newprice": "199",
+                    "oldcost": true,
+                    "oldprice": "299",
+                    "imgsrc": "images/content/product-card/juice.jpg",
+                    "sale": "30",
+                    "badgenew": false,
+                    "badgesale": true,
+                    "badgehit": false,
+                    "statusrate": false,
+                })
+            </li>
+            <li class="top-product__item mix drinks">
+                @@include('../components/_product-card.html', {
+                    "subtitle": "Кофе с коноплей органический Caffé Salomoni 250г",
+                    "newprice": "877",
+                    "oldcost": false,
+                    "oldprice": "1999",
+                    "imgsrc": "images/content/product-card/coffee.jpg",
+                    "sale": "50",
+                    "badgenew": true,
+                    "badgesale": false,
+                    "badgehit": false,
+                    "statusrate": false,
+                })
+            </li>
+            <li class="top-product__item mix grocery">
+                @@include('../components/_product-card.html', {
+                    "subtitle": "Кетчуп томатный детский органический Bio-Zentrale 500мл",
+                    "newprice": "600",
+                    "oldcost": false,
+                    "oldprice": "1999",
+                    "imgsrc": "images/content/product-card/ketchup.jpg",
+                    "sale": "50",
+                    "badgenew": false,
+                    "badgesale": false,
+                    "badgehit": false,
+                    "statusrate": false,
+                })
+            </li>
+        </ul>
+        <a class="btn btn--transparent" href="#">
+            Показать еще
+        </a>
+    </div>
+</section>

@@ -1,0 +1,74 @@
+<article class="product-card ">
+    <div class="product-card__top">
+        <div class="product-card__badges">
+            @@if(badgenew === true) {
+                <span class="badge">новинка</span>
+            }
+            @@if(badgesale === true) {
+                <span class="badge badge--sale">-@@sale <span>%</span> </span>
+            }
+            @@if(badgehit === true) {
+                <span class="badge badge--hit">хит</span>
+            }
+        </div>
+        <button class="btn btn--favourite" type="button">
+            <span class="visually-hidden">Избранное</span>
+            <svg class="product-card__favourite" width="32" height="29">
+                <use xlink:href="images/sprite.svg#favorite-sm"></use>
+            </svg>
+        </button>
+    </div>
+    <a class="product-card__body" href="#">
+        <img class="product-card__img" src="@@imgsrc" width="275" height="215" alt="Ананас" >
+    </a>
+<div class="product-card__wrapper">
+    
+        @@if (statusrate === true) {
+            <div class="product-card__box">
+    
+                @@if (statusheve === true) {
+                    <span class="product-card__status">
+                       В наличии
+                    </span>
+                }
+    
+                @@if (statusends === true) {
+                    <span class="product-card__status product-card__status--ends">
+                       заканчивается
+                    </span>
+                }
+    
+                @@if (statusenot === true) {
+                    <span class="product-card__status product-card__status--not">
+                       нет в наличии
+                    </span>
+                }
+                 <div class="product-card__rait">
+                    <span>4.5</span>
+                    <svg class="product-card__star"  width="16" height="16">
+                        <use xlink:href="images/sprite.svg#rait-star"></use>
+                    </svg>
+                 </div>
+    
+            </div>
+        }
+        <a class="product-card__subtitle" href="#">
+            @@subtitle
+        </a>
+        <div class="product-card__inner">
+            <div class="product-card__price">
+                @@if(oldcost === true) {
+                    <span class="product-card__cost product-card__cost--old">@@oldprice <span>₽</span> </span>
+                }
+    
+                <span class="product-card__cost">@@newprice <span>₽</span> </span>
+            </div>
+            <button class="btn btn--green-sm" type="button">
+                <span class="visually-hidden">Купить</span>
+                <svg class="btn__icon"  width="16" height="16">
+                    <use xlink:href="images/sprite.svg#cart"></use>
+                </svg>
+            </button>
+        </div>
+</div>
+</article>

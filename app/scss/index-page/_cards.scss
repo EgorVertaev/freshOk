@@ -229,9 +229,9 @@
     }
 
     &__btn {
-        padding:  4px;
+        padding: 0 4px;
         background-color: $green-900;
-        
+        fill: $white;
         &:hover {
             background-color: $green-1000;
         }
@@ -246,11 +246,6 @@
         }
     }
 
-    &__btn-icon {
-        display: flex;
-        justify-content: center;
-        text-align: center;
-    }
 
     &__num {
         outline: none;

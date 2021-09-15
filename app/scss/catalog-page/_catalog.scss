@@ -1,0 +1,558 @@
+.catalog {
+    background-color: $white;
+    padding: 50px 0 72px;
+
+
+    @include r($md) {
+        padding: 30px 0 24px;
+    }
+    &__title {
+        font-size: 42px;
+        font-weight: 700;
+        margin-bottom: 48px;
+
+        @include r($md) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__inner {
+        display: flex;
+    }
+
+    &__filters {
+        max-width: 300px;
+        width: 100%;
+        flex: 1 0 auto;
+        margin-right: 30px;
+
+        @include r($lg) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 999999;
+            background-color: $white;
+            padding-top: 78px;
+            max-width: 320px;
+            overflow: auto;
+            height: 100vh;
+            padding-left: 5px;
+            transform: translateY(-300%);
+        }
+
+        &--show {
+            transform: translateY(0);
+        }
+
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: $white;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: $silver-400;
+            border-radius: 6px;
+            border: 1px solid $white;
+        }
+    }
+
+    &__filters-close {
+        display: none;
+        position: absolute;
+        top: 20px;
+        right: 23px;
+        @include r($lg) {
+            display: flex;
+        }
+    }
+
+    &__box {
+        margin-bottom: 30px;
+        max-width: 300px;
+        width: 100%; 
+    }
+
+    &__box-title {
+        font-size: 24px;
+        letter-spacing: 0.03rem;
+        font-weight: 400;
+        border: 1px solid $silver-600;
+        line-height: 1.2;
+        padding: 18px;
+        border-radius: 6px 6px 0 0;
+        position: relative;
+        
+
+        &::after {
+            content: "";
+            position: absolute;
+            right: 24px;
+            bottom: 26px;
+            height: 11px;
+            width: 18px;
+            background-image: url('../images/content/icons/filter-arrow.svg');
+            transition: transform 0.2s linear;
+            transform: rotate(180deg);
+        }
+
+        &--active {
+            &::after {
+                transform: rotate(0);
+            }
+        }
+    }
+
+    &__box-content {
+        display: none;
+        max-height: 300px;
+        overflow: auto;
+        border: 1px solid $silver-600;
+        border-top: none;
+        border-radius: 0 0 6px 6px;
+        padding: 18px;
+
+        &::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: $white;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: $silver-400;
+            border-radius: 4px;
+            border: 1px solid $white;
+        }
+
+        .irs-with-grid .irs-grid,
+        .irs--flat .irs-min, 
+        .irs--flat .irs-max,
+        .irs--flat .irs-from,
+        .irs--flat .irs-to,
+        .irs--flat .irs-single {
+            display: none;
+        }
+
+        .irs--flat .irs-line,
+        .irs--flat .irs-bar {
+            height: 2px;
+        }
+        .irs--flat .irs-bar {
+            background-color: $green-900;
+        }
+
+        .irs--flat .irs-handle>i:first-child {
+            top: -5px;
+            height: 18px;
+            width: 18px;
+            border-radius: 50%;
+            left: 0;
+            background-color:  $green-900;
+        }
+        
+
+    }
+
+    &__item  {
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__btn {
+        display: block;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.3;
+    }
+
+    &__label {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        &:not(:last-child) {
+            margin-bottom: 12px;
+        }
+    }
+
+    &__input {
+        &:checked + .catalog__checkbox {
+            background-image: url('../../images/content/icons/check.svg');
+            background-repeat: no-repeat;
+            background-size: 12px 10px;
+            background-position: center center;
+            
+            border-color: $content;
+        }
+    }
+
+    &__checkbox {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        border-radius: 3px;
+        border: 1px solid $silver-600;
+        background-color: $silver-100;
+        margin-right: 12px;
+        transition: border-color 0.2s linear;
+        &:hover {
+            border-color: $content;
+        }
+    }
+
+    &__text {
+        font-size: 18px;
+        line-height: 1.2;
+        letter-spacing: 0.03rem;
+        font-weight: 400;
+    }
+
+    &__price {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        font-size: 16px;
+        
+        font-weight: 400;
+    }
+    &__price-from,
+    &__price-to {
+        text-align: center;
+        color: $content;
+        line-height: 2.4;
+        position: relative;
+        &::before {
+            content: "до";
+            color: $silver-600;
+            position: absolute;
+            left: -25px;
+            bottom: 9px;
+            line-height: 1;
+        }
+
+        &::after {
+            content: "₽";
+            color: $silver-600;
+            position: absolute;
+            right: -15px;
+            bottom: 7px;
+            line-height: 1;
+        }
+    }
+
+    &__input-from,
+    &__input-to {
+        display: inline-block;
+        text-align: center;
+        width: 80px;
+        height: 40px;
+        border-radius: 3px;
+        border: 1px solid $silver-600;
+        background-color: $silver-100;
+        outline: transparent;
+
+        &:focus {
+            box-shadow: 0px 0px 0px 4px $green-400;
+        }
+    }
+
+    &__main {
+        flex: 1 1 auto
+    }
+
+    &__filter {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 48px;
+
+        @include r($lg) {
+            justify-content: flex-start;
+        }
+
+        @include r($md) {
+            margin-bottom: 30px;   
+        }
+    }
+
+    &__select {
+        margin-right: 15px;
+
+        @include r($lg) {
+                margin-right: 0;
+        }
+
+        &:not(:last-child){
+            margin-right: 15px;
+            @include r($md) {
+                margin-right: 10px;
+            }
+        }
+
+        .jq-selectbox__select {
+            background: transparent;
+            box-shadow: none;
+            border: 1px solid $silver-600;
+            border-radius: 3px 3px 0px 0px;
+            padding: 15px 45px 15px 15px;
+            line-height: 1;
+            height: auto;
+            color: $content;
+            width: 180px;
+            font-family: $f-lato;
+            font-weight: 400;
+            text-shadow: none;
+            border-color: $silver-600;
+            transition: border-color 0.2s linear;
+
+            @include r($md) {
+                width: 130px;
+                font-size: 12px; 
+                padding: 15px 15px 15px 9px;  
+            }
+
+            
+
+            &--active {
+               border-color: $content; 
+            }
+
+            &.jq-selectbox__select--active {
+                .jq-selectbox__trigger {
+                    transition: transform 0.3s linear;
+                    transform: rotate(0);
+                }
+            }
+        }
+
+        .jq-selectbox.dropdown.opened {     
+                .jq-selectbox__trigger {
+                    transition: transform 0.3s linear;
+                    transform: rotate(0);
+                }
+        }
+
+        .jq-selectbox__trigger {
+            position: absolute;
+            border-left: none;
+            top: 19px;
+            right: 15px;
+            height: 6px;
+            width: 11px;
+            background-image: url('../../images/content/icons/filter-arrow.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            transform: rotate(180deg);
+
+            @include r($md) {
+                right: 7px;
+                top: 18px;
+            }
+        }
+
+        .jq-selectbox__trigger-arrow {
+            border: none;
+        }
+
+        .jq-selectbox.focused .jq-selectbox__select {
+            border: none;
+        }
+
+        .jq-selectbox__dropdown {
+            border: 1px solid $silver-600;
+            border-top: none;
+            padding: 15px 12px;
+            width: 100%;
+            background-color: $white;
+            color: $content;
+            border-radius: 0 0 6px 6px;
+
+            li {
+                cursor: pointer;
+                &:not(:last-child) {
+                    margin-bottom: 15px;
+
+                    @include r($md) {
+                        margin-bottom: 10px;
+                    }   
+                }
+            }
+
+            @include r($md) {
+                padding: 12px 9px;
+                font-size: 12px;
+
+            }
+        }
+
+        &--sort {
+            .jq-selectbox__select {
+                width: 100px;
+                @include r($md) {
+                    width: 70px;
+                }
+            }
+        }
+        
+    }
+
+    &__main-btn {
+        background-color: $silver-100;
+        width: 47px;
+        height: 47px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        outline: transparent;
+        &:not(:last-child) {
+            margin-right: 15px;
+
+            @include r($md) {
+                margin-right: 10px;
+            }
+        }
+
+        &.catalog__main-btn--active {
+            .catalog__btn-icon {
+                fill: $green-900;
+            }
+        }
+
+        &:focus {
+            box-shadow: 0px 0px 0px 4px $green-400;
+        }   
+
+        @include r($xl) {
+            display: none;
+        }
+
+        &--filter {
+            display: none;
+            @include r($lg) {
+                display: block;
+            }
+        }
+    }
+    
+    &__btn-icon {
+        fill: $silver-600;
+    }
+
+    &__filter-btn-icon {
+        fill: $green-900;
+    }
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 48px;
+
+        @include r($xl) {
+            justify-content: center;
+        }
+
+        @include r($lg) {
+            justify-content: space-between;
+        }
+
+        @include r($md) {
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        &.catalog__content--list {
+
+           .catalog__content-item {
+                height: 100%;
+                width: 48%;
+                &:not(:nth-child(3n+3)){
+                    margin-right: 0px;
+                }
+                &:not(:nth-last-child(-n+3)) {
+                    margin-bottom: 0px;
+                }
+
+                &:nth-child(odd) {
+                    margin-right: 30px;
+                }
+                &:not(:nth-last-child(-n+2)) {
+                    margin-bottom: 30px;
+                }
+           } 
+        }
+    }
+    
+    &__content-item {
+        height: 410px;
+        width: calc(100% / 3 - 20px);
+
+        @include r($sm) {
+            height: 344px;
+        }
+
+        @include r($xl) {
+            width: calc(100% / 2 - 50px );
+        }
+
+        @include r($lg) {
+            width: calc(100% / 3 - 10px);
+        }
+
+        @include r($md) {
+            width: calc(100% / 2 - 20px );
+        }
+
+        @include r($sm) {
+            width: calc(100% / 2 - 5px );
+        }
+
+        &:not(:nth-child(3n+3)) {
+            margin-right: 30px;
+
+            @include r($xl) {
+                margin-right: 0;
+            }  
+        }
+
+        &:nth-child(odd) {
+            @include r($xl) {
+                margin-right: 10px;
+            }
+
+            @include r($lg) {
+                margin-right: 0;
+            }
+
+            @include r($md) {
+                margin-right: 10px;
+            }
+        }
+
+        &:not(:nth-last-child(-n+3)) {
+            margin-bottom: 30px;
+            @include r($xl) {
+                margin-bottom: 10px; 
+            }
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        @include r($sm) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__btn-green {
+        margin-bottom: 24px;
+    }
+}
+

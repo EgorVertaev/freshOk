@@ -1,0 +1,40 @@
+.breadcrumbs {
+    padding: 128px 0 24px;
+    background-color: $silver-100;
+    @include r($md) {
+        padding-top: 150px;   
+    }
+    
+    @include r($sm) {
+        padding-top: 138px;
+    }
+    &__list {
+        display: flex;
+    }
+
+    &__item {
+        position: relative;
+        &:not(:last-child) {
+            margin-right: 20px;
+
+            &::after{
+                content: "";
+                position: absolute;
+                right: -13px;
+                bottom: 6px;
+                width: 6px;
+                height: 10px;
+                background-image: url('../images/content/icons/breadcrumbs-arrow.svg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+            }
+        }
+    }
+
+    &__link {
+        font-weight: 400;
+        letter-spacing: 0.03rem;
+    }
+}
+

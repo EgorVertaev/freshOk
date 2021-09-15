@@ -4,7 +4,9 @@
     &__list {
         display: flex;
 
-        @include r($md) {
+        @include r($lg) {
+            max-width: 768px;
+            margin: 0 auto;
             justify-content: space-between;
             flex-wrap: wrap;
         }
@@ -19,17 +21,17 @@
         width: 52%;
 
         @include r($xl) {
+            width: 33%;
             padding: 68px 0 76px 20px;
         }
 
         @include r($lg) {
-            width: 33%;
+            width: 100%;
+            margin-bottom: 15px;
         }
 
-        @include r($md) {
-            width: 100%;
+        @include r($md) { 
             padding: 76px 0 30px 14px;
-            margin-bottom: 15px;
         }
 
         @include r($sm) {
@@ -43,14 +45,13 @@
                 margin-right: 15px;
             }
 
-            @include r($md) {
+            @include r($lg) {
                 margin-right: 0;
             }
 
             @include r($sm) {
                 margin-bottom: 15px;
             }
-
         }
 
         &--sm {
@@ -61,10 +62,9 @@
                 margin-bottom: 0;
             }
 
-            @include r($md) {
+            @include r($lg) {
                 width: calc((100% - 15px) / 2);
             }
-
 
             @include r($sm) {
                 width: 100%;

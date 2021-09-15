@@ -24,9 +24,9 @@
         padding-left: 70px;
         max-width: 270px;
         width: 100%;
-        
+        margin-right: 53px;
+
         &:not(:last-child) {
-            margin-right: 53px;
 
             @include r($lg) {
                 margin-bottom: 28px;

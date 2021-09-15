@@ -1,6 +1,5 @@
 .product-card {
     height: 100%;
-
     display: flex;
     flex-direction: column;
     background-color: $white;
@@ -8,18 +7,71 @@
     border-radius: 6px;
     max-width: 300px;
     transition: border-color 0.3s linear;
-    
+
     &:hover {
         border-color: $green-900;
     }
+    
+    &.product-card--list {
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 470px;
+        position: relative;
 
+        .product-card__top {
+            position: absolute;
+            width: 100%;
+        }
+        
+        .product-card__body {
+            padding: 0;
+            flex: 1 0 auto;
+        }
+
+        .product-card__img {
+            width: 200px;
+            height: 155px; 
+        }
+        .product-card__wrapper {
+            display: flex;
+            flex-direction: column;
+            max-width: 230px;
+            width: 100%;
+            height: 160px;
+            flex: 0 1 auto;
+            padding: 12px 12px 12px 0;
+        }
+
+        .product-card__box {
+            width: 100%;
+            margin-bottom: 0;
+            padding: 0;
+        }
+
+        .product-card__subtitle {
+            padding: 0;
+            max-width: 160px;
+        }
+
+        .product-card__inner {
+            padding: 0;
+        }
+
+        .btn--favourite {
+            position: absolute;
+            right: 12px;
+            top:62px;
+        }
+        
+    }
     &__top {
         display: flex;
         justify-content: space-between;
         padding: 10px 12px 7px;
     }
 
-    &__favorit {
+    &__favourite {
+        fill: $silver-600;
         
         &:hover {
             fill: $yellow;
@@ -47,6 +99,52 @@
         }
     }
 
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+  
+    &__box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 18px;
+        margin-bottom: -19px;
+    }
+
+    &__status {
+        text-transform: uppercase;
+        font-size: 10px;
+        color: $green-900;
+
+        &--ends {
+            color: $red;   
+        }
+
+        &--not {
+            color: $silver-600;
+        }
+
+        @include r($sm) {
+            font-size: 8px;
+        }
+    }
+
+    &__rait {
+        display: flex;
+
+        span {
+            font-weight: 700;
+            color: $content;
+            margin-right: 4px;
+        }
+    }
+
+    &__star {
+        fill: #FFB800;
+    }
+
     &__subtitle {
         line-height: 1.4;
         max-width: 290px;
@@ -65,9 +163,9 @@
             outline-color: $green-200;
         }
 
-        @include r($sm) {
-            margin-bottom: 10px;
-        }
+        // @include r($sm) {
+        //     margin-bottom: 10px;
+        // }
     }
 
     &__inner {
