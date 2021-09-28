@@ -19,27 +19,23 @@
         </button>
     </div>
     <a class="product-card__body" href="#">
-        <img class="product-card__img" src="@@imgsrc" width="275" height="215" alt="Ананас" >
+        <img class="product-card__img" src="images/content/product-card/@@imgsrc" width="275" height="215" alt="Ананас" >
     </a>
 <div class="product-card__wrapper">
-    
         @@if (statusrate === true) {
             <div class="product-card__box">
-    
                 @@if (statusheve === true) {
-                    <span class="product-card__status">
+                    <span class="status ">
                        В наличии
                     </span>
                 }
-    
                 @@if (statusends === true) {
-                    <span class="product-card__status product-card__status--ends">
+                    <span class="status status--ends">
                        заканчивается
                     </span>
                 }
-    
                 @@if (statusenot === true) {
-                    <span class="product-card__status product-card__status--not">
+                    <span class="status status--not">
                        нет в наличии
                     </span>
                 }
@@ -49,18 +45,18 @@
                         <use xlink:href="images/sprite.svg#rait-star"></use>
                     </svg>
                  </div>
-    
             </div>
         }
         <a class="product-card__subtitle" href="#">
-            @@subtitle
+            <h3 class="product-card__title">
+                @@subtitle
+            </h3> 
         </a>
         <div class="product-card__inner">
             <div class="product-card__price">
                 @@if(oldcost === true) {
                     <span class="product-card__cost product-card__cost--old">@@oldprice <span>₽</span> </span>
                 }
-    
                 <span class="product-card__cost">@@newprice <span>₽</span> </span>
             </div>
             <button class="btn btn--green-sm" type="button">

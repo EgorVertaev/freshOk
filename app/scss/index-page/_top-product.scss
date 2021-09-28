@@ -50,11 +50,16 @@
     }
 
     &__item {
+        max-width: 300px;
 
         &:nth-child(odd) {
 
             @include r($md) {
                 justify-self: end;
+            }
+
+            @include r($sm) {
+                justify-self: normal;
             }
         }
     }

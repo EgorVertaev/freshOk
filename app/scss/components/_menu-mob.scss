@@ -11,6 +11,7 @@
     max-width: 300px;
     width: 100%;
     overflow: auto;
+    overflow-x: hidden;
     transform: translateX(-300%);
     transition: transform 0.2s linear;
 
@@ -90,8 +91,7 @@
     }
 
     &__wrapper {
-        padding: 24px 0;
-        
+        padding: 24px 0;  
     }
     
     &__contact {
@@ -173,14 +173,14 @@
     }
 
     &__item {
-
         &:not(:last-child) {
-            margin-bottom: 15px;
+            margin-bottom: 4px;
         }
     }
 
     &__link {
         display: block;
+        padding: 6px 0;
     }
    
 }

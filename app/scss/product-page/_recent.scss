@@ -1,0 +1,124 @@
+.recent {
+    padding-bottom: 72px;
+
+    @include r($md) {
+        padding-bottom: 48px;
+    }   
+
+    &__title {
+        font-size: 30px;
+        font-weight: 700;
+        letter-spacing: 0.03rem;
+        text-transform: uppercase;
+        margin-bottom: 60px;
+
+        @include r($md) {
+            margin-bottom: 45px;   
+        }
+
+        @include r($sm) {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__slider {
+
+        .slick-slide {
+            &:not(:last-child) {
+                margin-right: 30px;
+
+                @include r($xl) {
+                    margin-right: 15px;
+                }
+
+                @include r($md) {
+                    margin-right: 10px;
+                }
+
+                @include r($sm) {
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        .slick-prev,
+        .slick-next {
+            position: absolute;
+            top: -115px;
+            right: 0;
+            border: 1px solid $silver-600;
+            border-radius: 6px;
+            padding: 12px 20px;
+            transition: background-color 0.3s, border-color 0.3s;
+
+            &:hover {
+                background-color: $green-200;
+                border-color: $green-900;
+
+                .recent__icon {
+                    fill: $green-900;
+                }
+            }
+      
+            &:focus {
+                box-shadow: 0px 0px 0px 4px $green-200;
+            }
+        }
+
+        .slick-prev {
+            right: 110px;
+
+            @include r($xl) {
+                right: 95px;   
+            }
+        }
+        .slick-next {
+            right: 28px;
+
+            @include r($xl) {
+                right: 15px;
+            }
+        }
+        
+        .recent__icon {
+            fill: $content;
+        }
+
+        .slick-dots {
+            display: flex;
+            justify-content: center;
+
+            button {
+                font-size: 0;
+                width: 12px;
+                height: 12px;
+                border: 1px solid $silver-600;
+                 border-radius: 50%;
+            }
+
+            li {
+                &:not(:last-child) {
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        .slick-active > button {
+            background-color: $green-900;
+        }
+    }
+
+    &__slide {
+        max-width: 300px;
+        height: 410px;
+
+        @include r($md) {
+            height: 324px;  
+        }
+
+        &:not(:last-child) {
+            margin-right: 30px;
+        }
+    }
+}

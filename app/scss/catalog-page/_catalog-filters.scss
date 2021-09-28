@@ -1,0 +1,264 @@
+.catalog {
+    &__filters {
+        max-width: 300px;
+        width: 100%;
+        flex: 1 0 auto;
+        margin-right: 30px;
+        transition: transform 0.3s linear;
+
+        @include r($lg) {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999999;
+            background-color: $white;
+            padding-top: 78px;
+            max-width: 320px;
+            overflow: auto;
+            height: 100vh;
+            padding-left: 5px;
+            transform: translateX(-300%);
+        }
+
+        &--show {
+            transform: translateX(0);
+        }
+
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: $white;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: $silver-400;
+            border-radius: 6px;
+            border: 1px solid $white;
+        }
+    }
+
+    &__filters-close {
+        display: none;
+        position: absolute;
+        top: 20px;
+        right: 23px;
+
+        @include r($lg) {
+            display: flex;
+        }
+    }
+
+    &__box {
+        margin-bottom: 30px;
+        max-width: 300px;
+        width: 100%; 
+        cursor: pointer;
+    }
+
+    &__box-title {
+        font-size: 24px;
+        letter-spacing: 0.03rem;
+        font-weight: 400;
+        border: 1px solid $silver-600;
+        line-height: 1.2;
+        padding: 18px;
+        border-radius: 6px 6px 0 0;
+        position: relative;
+        transition: border-color 0.3s linear;
+
+        &::after {
+            content: "";
+            position: absolute;
+            right: 24px;
+            bottom: 26px;
+            height: 11px;
+            width: 18px;
+            background-image: url('../images/content/icons/filter-arrow.svg');
+            transition: transform 0.2s linear;
+            transform: rotate(180deg);
+        }
+
+        &:hover {
+            border-color: $content;
+        }
+
+        &--active {
+            &::after {
+                transform: rotate(0);
+            }
+        }
+    }
+
+    &__box-content {
+        
+        max-height: 300px;
+        overflow: auto;
+        border: 1px solid $silver-600;
+        border-top: none;
+        border-radius: 0 0 6px 6px;
+        padding: 18px;
+
+        &::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: $white;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: $silver-400;
+            border-radius: 4px;
+            border: 1px solid $white;
+        }
+
+        .irs-with-grid .irs-grid,
+        .irs--flat .irs-min, 
+        .irs--flat .irs-max,
+        .irs--flat .irs-from,
+        .irs--flat .irs-to,
+        .irs--flat .irs-single {
+            display: none;
+        }
+
+        .irs--flat .irs-line,
+        .irs--flat .irs-bar {
+            height: 2px;
+        }
+        .irs--flat .irs-bar {
+            background-color: $green-900;
+        }
+
+        .irs--flat .irs-handle>i:first-child {
+            top: -5px;
+            height: 18px;
+            width: 18px;
+            border-radius: 50%;
+            left: 0;
+            background-color:  $green-900;
+        }
+        
+
+    }
+
+    &__item  {
+        transition: color 0.2s linear;
+
+        &:not(:last-child) {
+            padding-bottom: 12px;
+        }
+
+        &:hover {
+            color: $green-900;
+        }
+    }
+
+    &__btn {
+        display: block;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.3;
+    }
+
+    &__label {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        &:not(:last-child) {
+            margin-bottom: 12px;
+        }
+        &:hover {
+            .catalog__checkbox {
+                border-color: $content;
+            }
+
+            .catalog__text {
+                color: $green-900
+            }
+        }
+    }
+
+    &__input {
+        &:checked + .catalog__checkbox {
+            background-image: url('../../images/content/icons/check.svg');
+            background-repeat: no-repeat;
+            background-size: 12px 10px;
+            background-position: center center;
+            
+            border-color: $content;
+        }
+    }
+
+    &__checkbox {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        border-radius: 3px;
+        border: 1px solid $silver-600;
+        background-color: $silver-100;
+        margin-right: 12px;
+        transition: border-color 0.2s linear;
+        
+    }
+
+    &__text {
+        font-size: 18px;
+        line-height: 1.2;
+        letter-spacing: 0.03rem;
+        font-weight: 400;
+        transition: color 0.2s linear;
+    }
+
+    &__price {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        font-size: 16px;
+        
+        font-weight: 400;
+    }
+
+    &__price-from,
+    &__price-to {
+        text-align: center;
+        color: $content;
+        line-height: 2.4;
+        position: relative;
+
+        &::before,
+        &::after {
+            content: "до";
+            color: $silver-600;
+            position: absolute;    
+            bottom: 8px;
+            line-height: 1;
+        }
+
+        &::before {
+            left: -25px;
+        }
+
+        &::after {
+            content: "₽";
+            right: -15px;  
+        }
+    }
+
+    &__input-from,
+    &__input-to {
+        display: inline-block;
+        text-align: center;
+        width: 80px;
+        height: 40px;
+        border-radius: 3px;
+        border: 1px solid $silver-600;
+        background-color: $silver-100;
+        outline: transparent;
+
+        &:focus {
+            box-shadow: 0px 0px 0px 4px $green-400;
+        }
+    }
+}

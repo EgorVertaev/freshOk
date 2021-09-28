@@ -39,12 +39,20 @@
             border-color: $content;
         }
 
+        &--noclick {
+            cursor: default;
+        }
+
         &:hover {
             border-color: $silver-600;
         }
 
         &:focus {
             box-shadow: 0px 0px 0px 4px $green-400;
+        }
+
+        &.pagination__link--noclick:focus {
+            box-shadow: none;
         }
     }
 

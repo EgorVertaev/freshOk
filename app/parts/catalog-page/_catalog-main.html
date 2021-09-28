@@ -1,0 +1,267 @@
+<div class="catalog__main">
+    <div class="catalog__filter"> 
+        <button class="catalog__main-btn catalog__main-btn--filter">
+            <svg class="catalog__filter-icon"  width="34" height="34">
+                <use xlink:href="images/sprite.svg#filter-btn"></use>
+            </svg>
+        </button>
+        <form class="catalog__main-form" action="#">
+            <select class="catalog__select catalog-select-js">
+                <option value="По популярности">
+                    По названию
+                </option>
+                <option value="По популярности">
+                    По популярности
+                </option>
+                <option value="Сначала дешевые">
+                    Сначала дешевые
+                </option>
+                <option value="Сначала дорогие">
+                    Сначала дорогие
+                </option>
+                <option value="По алфавиту">
+                    По алфавиту
+                </option>
+            </select>
+            <select class="catalog__select catalog__select--sort catalog-select-js">
+                <option value="По популярности">
+                    по 12
+                </option>
+                <option value="Сначала дешевые">
+                    по 18 
+                </option>
+                <option value="Сначала дорогие">
+                    по 24
+                </option>
+                <option value="По алфавиту">
+                    по 30
+                </option>
+                <option value="По алфавиту">
+                    по 36
+                </option>
+            </select>
+        </form>
+        <button class="catalog__main-btn catalog__main-btn--list ">
+            <span class="visually-hidden">Каталог лист</span>
+            <svg class="catalog__btn-icon"  width="34" height="34">
+                <use xlink:href="images/sprite.svg#btn-list"></use>
+            </svg>
+        </button>
+        <button class="catalog__main-btn catalog__main-btn--grid catalog__main-btn--active">
+            <span class="visually-hidden">Каталог сетка</span>
+            <svg class="catalog__btn-icon"  width="36" height="34">
+                <use xlink:href="images/sprite.svg#btn-greid"></use>
+            </svg>
+        </button>
+    </div>
+    <ul class="catalog__content">
+        <li class="catalog__content-item">  
+            @@include('../components/_product-card.html', {
+                "subtitle": "Ананас, 1кг",
+                "newprice": "999",
+                "imgsrc": "pineapple.jpg",
+                "sale": "50",
+                "badgenew": true,
+                "badgesale": true,
+                "badgehit": false,
+                "oldcost": true,
+                "oldprice": "1999",
+                "statusrate": true,
+                "statusheve": true,
+                "statusends": false,
+                "statusenot": false,
+            })
+        </li>
+        <li class="catalog__content-item">
+            @@include('../components/_product-card.html', {
+                "subtitle": "Лимон, 1кг",
+                "newprice": "199",
+                "imgsrc": "lemon.jpg",
+                "sale": "50",
+                "badgenew": false,
+                "badgesale": false,
+                "badgehit": false,
+                "oldcost": false,
+                "oldprice": "1999",
+                "statusrate": true,
+                "statusheve": true,
+                "statusends": false,
+                "statusenot": false,
+            })
+        </li>
+        <li class="catalog__content-item">
+            @@include('../components/_product-card.html', {
+                "subtitle": "Питахайя красная с белой мякотью, 1шт",
+                "newprice": "1019",
+                "oldcost": false,
+                "oldprice": "1999",
+                "imgsrc": "dragonfruit.jpg",
+                "sale": "50",
+                "badgenew": false,
+                "badgesale": false,
+                "badgehit": true,
+                "statusrate": true,
+                "statusheve": true,
+                "statusends": false,
+                "statusenot": false,
+            })
+        </li>
+        <li class="catalog__content-item">  
+            @@include('../components/_product-card.html', {
+                "subtitle": "Перец оранжевый, 1кг",
+                "newprice": "349",
+                "oldcost": false,
+                "oldprice": "1999",
+                "imgsrc": "paprik.jpg",
+                "sale": "50",
+                "badgenew": true,
+                "badgesale": false,
+                "badgehit": false,
+                "statusrate": true,
+                "statusheve": true,
+                "statusends": false,
+                "statusenot": false,
+            })
+        </li>
+        <li class="catalog__content-item">   
+            @@include('../components/_product-card.html', {
+                "subtitle": "Морковь молодая с бабушкиной грядки, 1кг",
+                "newprice": "49",
+                "oldcost": false,
+                "oldprice": "1999",
+                "imgsrc": "carrot.jpg",
+                "sale": "50",
+                "badgenew": false,
+                "badgesale": false,
+                "badgehit": true,
+                "statusrate": true,
+                "statusheve": true,
+                "statusends": false,
+                "statusenot": false,
+            })
+        </li>
+        <li class="catalog__content-item"> 
+            @@include('../components/_product-card.html', {
+                "subtitle": "Напиток сокосодержащий Sanpellegrino Aranciata Orange Красный апельсин безалкогольный...",
+                "newprice": "199",
+                "oldcost": true,
+                "oldprice": "299",
+                "imgsrc": "juice.jpg",
+                "sale": "30",
+                "badgenew": false,
+                "badgesale": true,
+                "badgehit": false,
+                "statusrate": true,
+                "statusheve": true,
+                "statusends": false,
+                "statusenot": false,
+            })
+        </li>
+        <li class="catalog__content-item">  
+            @@include('../components/_product-card.html', {
+                "subtitle": "Кофе с коноплей органический Caffé Salomoni 250г",
+                "newprice": "877",
+                "oldcost": false,
+                "oldprice": "1999",
+                "imgsrc": "coffee.jpg",
+                "sale": "50",
+                "badgenew": true,
+                "badgesale": false,
+                "badgehit": false,
+                "statusrate": true,
+                "statusheve": true,
+                "statusends": false,
+                "statusenot": false,
+            })
+        </li>
+        <li class="catalog__content-item">
+            @@include('../components/_product-card.html', {
+                "subtitle": "Кетчуп томатный детский органический Bio-Zentrale 500мл",
+                "newprice": "600",
+                "oldcost": false,
+                "oldprice": "1999",
+                "imgsrc": "ketchup.jpg",
+                "sale": "50",
+                "badgenew": false,
+                "badgesale": false,
+                "badgehit": false,
+                "statusrate": true,
+                "statusheve": true,
+                "statusends": false,
+                "statusenot": false,
+            })
+        </li>
+        <li class="catalog__content-item">  
+            @@include('../components/_product-card.html', {
+                "subtitle": "Ананас, 1кг",
+                "newprice": "999",
+                "imgsrc": "pineapple.jpg",
+                "sale": "50",
+                "badgenew": true,
+                "badgesale": true,
+                "badgehit": false,
+                "oldcost": true,
+                "oldprice": "1999",
+                "statusrate": true,
+                "statusheve": true,
+                "statusends": false,
+                "statusenot": false,
+            })
+        </li>
+        <li class="catalog__content-item">
+            @@include('../components/_product-card.html', {
+                "subtitle": "Лимон, 1кг",
+                "newprice": "199",
+                "imgsrc": "lemon.jpg",
+                "sale": "50",
+                "badgenew": false,
+                "badgesale": false,
+                "badgehit": false,
+                "oldcost": false,
+                "oldprice": "1999",
+                "statusrate": true,
+                "statusheve": true,
+                "statusends": false,
+                "statusenot": false,
+            })
+        </li>
+        <li class="catalog__content-item">
+            @@include('../components/_product-card.html', {
+                "subtitle": "Питахайя красная с белой мякотью, 1шт",
+                "newprice": "1019",
+                "oldcost": false,
+                "oldprice": "1999",
+                "imgsrc": "dragonfruit.jpg",
+                "sale": "50",
+                "badgenew": false,
+                "badgesale": false,
+                "badgehit": true,
+                "statusrate": true,
+                "statusheve": true,
+                "statusends": false,
+                "statusenot": false,
+            })
+        </li>
+        <li class="catalog__content-item">  
+            @@include('../components/_product-card.html', {
+                "subtitle": "Перец оранжевый, 1кг",
+                "newprice": "349",
+                "oldcost": false,
+                "oldprice": "1999",
+                "imgsrc": "paprik.jpg",
+                "sale": "50",
+                "badgenew": true,
+                "badgesale": false,
+                "badgehit": false,
+                "statusrate": true,
+                "statusheve": true,
+                "statusends": false,
+                "statusenot": false,
+            })
+        </li>
+    </ul>
+    <div class="catalog__wrapper">
+        <button class="catalog__btn-green btn btn--green " type="button">показать еще</button>
+         @@include('../components/_pagination.html')
+    </div>
+</div>

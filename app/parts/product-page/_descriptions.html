@@ -1,0 +1,139 @@
+<div class="descriptions">
+   <div class="container">
+      <div class="descriptions__inner">
+         <div class="descriptions__buttons">
+            <button class="descriptions__btn descriptions-js descriptions__btn--active" type="button">
+               описание
+            </button>
+            <button class="descriptions__btn specifications-js" type="button">
+               характеристики
+            </button>
+            <button class="descriptions__btn reviews-js" type="button">
+               Отзывы(<span>3</span>)
+            </button>
+         </div>
+         <div class="descriptions__content">
+            <div class="descriptions__descript descriptions__descript--show">
+               <p>
+                  Питахайя – это источник питательных веществ и витаминов. Содержит витамин С, который способствует
+                  укреплению
+                  иммунной системы. В составе питайи много клетчатки, она благотворно влияет на работу ЖКТ. Оказывает
+                  противовоспалительное действие, так как фрукт богат антиоксидантами. При употреблении питахайи,
+                  понижается
+                  уровень сахара в крови, улучшается зрение и работа сердечно–сосудистой системы. Так как фрукт
+                  низкокалорийный и состоит на 90% из воды, способствует снижению веса.
+               </p>
+               <p>
+                  Витамины: С, Е, РР, витамины группы В
+               </p>
+               <p>
+                  Микроэлементы: железо, калий, кальций, магний, фосфор
+               </p>
+               <p>
+                  Внешний вид товара может отличаться от изображений, представленных на сайте.
+               </p>
+            </div>
+            <div class="descriptions__specifications">
+               <p>Вес:
+                  <span>250-350 г;</span>
+               </p>
+               <p>Калорийность (на 100г):
+                  <span>50 ккал;</span>
+               </p>
+               <p>Условия хранения:
+                  <span>температура от +3 до +8;</span>
+               </p>
+               <p>Другие названия:
+                  <span>Драконов фрукт, Глаз дракона;</span>
+               </p>
+               <p>Страна происхождения:
+                  <span>Вьетнам;</span>
+               </p>
+               <p>Срок хранения:
+                  <span>до 5 дней.</span>
+               </p>
+            </div>
+            <div class="descriptions__reviews">
+               <h2 class="descriptions__title">
+                  мнения наших клиентов
+               </h2>
+               <ul class="descriptions__list">
+                  <li class="descriptions__item">
+                     <div class="descriptions__author">
+                        <img class="descriptions__img" src="https://via.placeholder.com/70x70" alt="фото автора"
+                           width="70" height="70">
+                        <div class="descriptions__info">
+                           <p class="descriptions__name">
+                              Андрей
+                           </p>
+                           <time class="descriptions__date" datetime="10-06-2021">
+                              10.06.2021
+                           </time>
+                        </div>
+                        <div class="descriptions__rate" data-rateyo-rating="3.3">
+                        </div>
+                     </div>
+                     <p class="descriptions__text">
+                        Яркий цвет, нежный вкус. Очень свежий и приятный, буду пробовать еще!))
+                     </p>
+                  </li>
+                  <li class="descriptions__item">
+                     <div class="descriptions__author">
+                        <img class="descriptions__img" src="https://via.placeholder.com/70x70" alt="фото автора"
+                           width="70" height="70">
+                        <div class="descriptions__info">
+                           <p class="descriptions__name">
+                              Екатерина Белая
+                           </p>
+                           <time class="descriptions__date" datetime="07-06-2021">
+                              7.06.2021
+                           </time>
+                        </div>
+                        <div class="descriptions__rate" data-rateyo-rating="4">
+                        </div>
+                     </div>
+                     <p class="descriptions__text">
+                        Цвет, конечно, очень насыщенный! Ожидаешь, что и вкус будет такой же яркий (просто взрыв), но
+                        нет. Вкус
+                        "сдержанно-сладкий" и очень-очень свежий! Рад, что есть такая возможность - пробовать
+                        экзотические
+                        фрукты.
+                     </p>
+                  </li>
+               </ul>
+               <h2 class="descriptions__title">
+                  остаить отзыв
+               </h2>
+               <form class="descriptions__form">
+                  <div class="descriptions__wrapper">
+                     <p class="descriptions__subtitle">Ваша оценка *</p>
+                     <div class="descriptions__form-rate">
+                     </div>
+                  </div>
+                  <div class="descriptions__form-inner">
+                     <div class="descriptions__form-wrapper">
+                        <label for="input-texarea">Ваш отзыв *
+                        </label>
+                        <textarea class="descriptions__input descriptions__input--text" id="input-texarea" required name="[reviews]message" placeholder="Введите текст отзыва"></textarea>
+                     </div>
+                     <div class="descriptions__input-inner">
+                        <label for="input-text">Имя</label>
+                        <input class="descriptions__input descriptions__input--name" id="input-text" type="text" placeholder="Введите ваше имя" name="[reviews]name">
+                        <label for="input-email">Email *</label>
+                        <input class="descriptions__input descriptions__input--mail" id="input-email" type="email" required placeholder="youremail@mail.com" name="[reviews]email">
+                     </div>
+                  </div>
+
+                  <label class="descriptions__checkbox-label">
+                     <span class="visually-hidden">Сохранить моё имя, email и адрес сайта в этом браузере для последующих моих комментариев.</span>
+                     <input class="descriptions__checkbox-input visually-hidden" type="checkbox" name="[offers]Товары со скидкой">
+                     <span class="descriptions__checkbox"></span>
+                     <span class="descriptions__checkbox-text">Сохранить моё имя, email и адрес сайта в этом браузере для последующих моих комментариев.</span>
+                 </label>
+                 <button class="btn btn--green" type="submit">Остаить отзыв</button>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,206 @@
+.product {
+    background-color: $white;
+    padding: 48px 63px;
+
+    &__inner {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);   
+        grid-auto-rows: 65px auto;
+        grid-column-gap: 30px;
+    }
+
+    &__slider {
+        grid-row: span 2;
+    }
+
+    &__list {
+    }
+
+    &__item {
+    }
+
+    &__box {
+    }
+
+    &__img {
+    }
+
+    &__title {
+        padding-top: 15px
+    }
+
+    &__main {
+        
+    }
+
+    &__info {
+        padding-top: 18px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    &__info-inner {
+        display: flex;
+        align-items: center;
+    }
+
+    &__rate {
+        margin-left: 10px;
+    }
+
+    &__price {
+       margin-bottom: 60px;
+    }
+
+    &__cost {
+        font-size: 30px;
+        font-weight: 700;
+        letter-spacing: 0.03rem;
+        color: $green-900;
+        line-height: 1;
+        position: relative;
+        
+        &--old {
+            font-size: 20px;
+            color: $silver-600;
+            margin-right: 16px;
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 10px;
+                left: 0;
+                right: 0;
+                height: 2px;
+                background-color: $silver-600;
+                transform: rotate(346deg);
+            }
+        }
+    }
+
+    &__quantity {
+        margin-bottom: 32px;
+        display: flex;
+    }
+
+    &__filter {
+        height: 44px;
+        display: flex;
+        margin-right: 12px;
+    }
+
+    &__btn {
+        padding: 0 7px;
+        background-color: $green-900;
+        fill: $white;
+        outline: transparent;
+
+        &:hover {
+            background-color: $green-1000;
+        }
+
+        &:focus {
+            box-shadow: 0px 0px 0px 4px $green-200;
+        }
+
+        &:active {
+            color: rgba($white, 50%);
+            box-shadow: inset 0px 4px 4px rgba($black, 0.25);
+        }
+
+        &--minus {
+            border-radius: 3px 0px 0px 3px;
+        }
+
+        &--plus {
+            border-radius: 0px 3px 3px 0px;
+        }
+    }
+
+    &__num {
+        font-size: 20px;
+        outline: none;
+        border: none;
+        text-align: center;
+        width: 70px;
+        line-height: 1;
+        background-color: $green-200;
+    }
+
+    &__btn-add {
+        padding: 10px 12px;
+        border-radius: 3px;
+        margin-right: auto;
+        display: flex;
+        align-items: center;
+
+        &:active {
+            .product__icon {
+                fill: rgba($white, 50%);
+            }
+        }
+    }
+
+    &__icon {
+        fill: $white;
+        margin-right: 13px;
+        transition: fill 0.2s linear;
+    }
+
+    &__delivery-title {
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 0.03rem;
+        color: $dark-900;
+        padding-bottom: 15px;
+        border-bottom: 1px solid $silver-600;
+    }
+    
+    &__text {
+        padding-top: 18px;
+        margin-bottom: 12px;
+
+        p{
+            font-size: 14px;
+            font-weight: 400;
+            color: $content;
+        }
+    }
+
+    &__link {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.2;
+        color: $green-900;
+        position: relative;
+        outline: transparent;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            right: 0;
+            height: 1px;
+            width: 100%;
+            background-color: transparent;
+            transition: background-color 0.3s ease;
+        }
+
+        &:hover {   
+            &::after {
+                background-color: $green-900;
+            }
+        }
+
+        &:active {
+            color: $green-1000;
+        }
+
+        &:focus {
+            box-shadow: 0px 0px 0px 2px inset $green-200;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.status {
+    text-transform: uppercase;
+    font-size: 10px;
+    color: $green-900;
+
+    &--ends {
+        color: $red;   
+    }
+
+    &--not {
+        color: $silver-600;
+    }
+
+    @include r($sm) {
+        font-size: 8px;
+    }
+
+    &--lg {
+        font-size: 16px;
+        font-weight: 600;
+    }
+}
